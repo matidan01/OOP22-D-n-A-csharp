@@ -1,6 +1,7 @@
 
 
 using DnA.Game.enitity.Api;
+using DnA.Game.enitity.MovableEntity.impl;
 
 namespace DnA.Game.enitity.impl{
     public class EntityFactory : IEntityFactory
@@ -9,7 +10,7 @@ namespace DnA.Game.enitity.impl{
         /// A constant for the value of the diamond.
         /// </summary>
         private const double DIAMOND_VALUE = 1;
-        private readonly Vector2d defaultVector = new Vector2d(0, 0);
+        private readonly Vector2d defaultVector = new(0, 0);
 
         public IEntity CreateEntity(MovablePlatform? movablePlatform, IEntity.EntityType type, params Position2d[] position)
         {
@@ -17,7 +18,7 @@ namespace DnA.Game.enitity.impl{
             {
                 IEntity.EntityType.BUTTON =>
                     new 
-            }
+            };
         }
     }
 }
