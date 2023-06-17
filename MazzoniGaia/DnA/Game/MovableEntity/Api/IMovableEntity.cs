@@ -1,6 +1,7 @@
 
 
 using DnA.Game.Entity.api;
+using DnA.Game.Common;
 
 namespace DnA.Game.MovableEntity.Api{
     public interface IMovableEntity : IEntity

@@ -1,9 +1,12 @@
-namespace DnA {
+using DnA.Game.MovableEntity.Api;
+using DnA.Game.Player.impl;
+
+namespace DnA.Game.Player.api {
 
     ///
     /// An interface representing the Game Character.
     ///
-    public interface  IPlayer
+    public interface  IPlayer : IMovableEntity
     {
         ///
         /// The jump speed value.

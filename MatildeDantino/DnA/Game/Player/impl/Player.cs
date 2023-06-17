@@ -1,11 +1,12 @@
 using DnA.Game.Common;
+using DnA.Game.Player.api;
+using DnA.Game.Entity.api;
 
-namespace DnA {
-
+namespace DnA.Game.Player.impl {
     /// <summary>
     /// IPlayer implementation.
     /// </summary>
-    public class Player : AbastractMovableEntity,AbstractEntity,IPlayer
+    public class Player : AbstractMovableEntity, IPlayer
     {
         private readonly IPlayer.PlayerType _playerType;
         private readonly State _playerState = new State();
@@ -20,16 +21,11 @@ namespace DnA {
         /// <param name="type">The type (angel/devil) of the player.</param>
         ///
         public Player(Position2d pos, Vector2d vet, double height, double width, IPlayer.PlayerType type)
-            : base(pos, vet, height, width, Entity.EntityType.PLAYER)
+            : base(pos, vet, height, width, IEntity.EntityType.PLAYER)
         {
             _playerType = type;
         }
 
-        /// <inheritdoc />
-        public override void Update()
-        {
-            base.Update();
-        }
 
         /// <inheritdoc />
         public State GetState()

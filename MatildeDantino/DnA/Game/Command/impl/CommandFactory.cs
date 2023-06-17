@@ -1,4 +1,8 @@
-namespace DnA{
+using DnA.Game.Player.api;
+using DnA.Game.Command.api;
+using DnA.Game.Player.impl;
+
+namespace DnA.Game.Command.impl {
 
     /// <summary>
     /// ICommandFactory implementation.

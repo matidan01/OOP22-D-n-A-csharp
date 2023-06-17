@@ -1,4 +1,4 @@
-namespace DnA{
+namespace DnA.Game.Command.api {
 
     /// <summary>
     /// Interface of a factory that creates <see cref="Command"/>s that can

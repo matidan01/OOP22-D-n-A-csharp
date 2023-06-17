@@ -1,5 +1,5 @@
 
-
+using DnA.Game.Common;
 
 namespace DnA.Game.Entity.api{
     public interface IEntity

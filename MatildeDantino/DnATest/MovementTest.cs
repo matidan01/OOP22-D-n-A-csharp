@@ -1,5 +1,8 @@
 using DnA.Game.Common;
-using DnA;
+using DnA.Game.Player.api;
+using DnA.Game.Player.impl;
+using DnA.Game.Command.api;
+using DnA.Game.Command.impl;
 
 namespace DnATest;
 

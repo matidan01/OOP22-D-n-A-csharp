@@ -1,5 +1,5 @@
 
-namespace DnA {
+namespace DnA.Game.Player.impl {
 ///
 /// A Class representing the state of a player.
 ///

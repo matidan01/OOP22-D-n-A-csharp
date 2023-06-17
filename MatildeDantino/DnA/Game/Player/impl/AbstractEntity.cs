@@ -1,8 +1,9 @@
 using DnA.Game.Box.Impl;
 using DnA.Game.Box.Api;
 using DnA.Game.Common;
+using DnA.Game.Entity.api;
 
-namespace DnA {
+namespace DnA.Game.Player.impl {
 
     /// <summary>
     /// Abstract class that implements the Entity interface.
@@ -35,10 +36,13 @@ namespace DnA {
         public IBoundingBox GetBoundingBox() => new RectBoundingBox(_box.GetPosition(), _box.GetHeight(), _box.GetWidth());
 
         /// <inheritdoc/>
-        public void SetPositionX(double x) => this.SetPosition(new Position2d(x, this.GetPosition()._y));
+        public void SetPositionX(double x) => this.SetPosition(new Position2d(x, this.GetPosition().GetY()));
 
         /// <inheritdoc/>
-        public void SetPositionY(double y) => this.SetPosition(new Position2d(this.GetPosition()._x, y));
+        public void SetPositionY(double y) => this.SetPosition(new Position2d(this.GetPosition().GetX(), y);
+
+        IEntity.EntityType IEntity.GetType() => _type;
+
     }
 
 }

@@ -1,4 +1,4 @@
-namespace DnA {
+namespace DnA.Game.Command.api {
 
     /// <summary>
     /// A functional interface representing a generic command.
