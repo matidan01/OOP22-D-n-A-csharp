@@ -1,4 +1,5 @@
 using DnA.Game.Common;
+
 /// <summary>
 /// Abstract class that implements the <see cref="MovableEntity"/> interface.
 /// </summary>
