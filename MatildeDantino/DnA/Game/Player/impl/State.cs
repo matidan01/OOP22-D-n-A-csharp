@@ -1,7 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 
+namespace DnA {
 ///
 /// A Class representing the state of a player.
 ///
@@ -86,3 +84,6 @@ public class State
         STATE_STILL
     }
 }
+
+}
+

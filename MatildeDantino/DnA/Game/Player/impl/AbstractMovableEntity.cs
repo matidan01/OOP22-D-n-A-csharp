@@ -1,12 +1,18 @@
+<<<<<<< HEAD
 using System.Numerics;
 using DnA;
 using DnA.Game.enitity.Api;
 using DnA.Game.Entity.api;
 
 
+=======
+using DnA.Game.Common;
+>>>>>>> 1b40072c499f8f2f1c4693cb2651021a7f37b622
 /// <summary>
 /// Abstract class that implements the <see cref="MovableEntity"/> interface.
 /// </summary>
+namespace DnA
+{
 public abstract class AbstractMovableEntity : AbstractEntity, MovableEntity
 {
     private Position2d pos;
@@ -32,6 +38,7 @@ public abstract class AbstractMovableEntity : AbstractEntity, MovableEntity
         _vector = vet;
     }
 
+<<<<<<< HEAD
     protected AbstractMovableEntity(Position2d pos, Vector2d vet, double height, double width, IEntity.EntityType type)
     {
         this.pos = pos;
@@ -42,16 +49,22 @@ public abstract class AbstractMovableEntity : AbstractEntity, MovableEntity
     }
 
 
+=======
+    public void SetVector(double x, double y) {
+        _vector = new Vector2d(x,y);
+    }
+
+>>>>>>> 1b40072c499f8f2f1c4693cb2651021a7f37b622
     /// <inheritdoc/>
     public void SetVectorX(double x)
     {
-        _vector = new Vector2d(x, _vector.Y);
+        _vector = new Vector2d(x, _vector.GetY());
     }
 
     /// <inheritdoc/>
     public void SetVectorY(double y)
     {
-        _vector = new Vector2d(_vector.X, y);
+        _vector = new Vector2d(_vector.GetX(), y);
     }
 
     /// <inheritdoc/>
@@ -71,4 +84,6 @@ public abstract class AbstractMovableEntity : AbstractEntity, MovableEntity
     {
         this.SetPosition(this.GetPosition().Sum(_vector));
     }
+}
+    
 }

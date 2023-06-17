@@ -1,9 +1,11 @@
+using DnA.Game.Common;
+
 namespace DnA {
 
     /// <summary>
     /// IPlayer implementation.
     /// </summary>
-    public class Player : AbstractEntity,IPlayer
+    public class Player : AbastractMovableEntity,AbstractEntity,IPlayer
     {
         private readonly IPlayer.PlayerType _playerType;
         private readonly State _playerState = new State();
