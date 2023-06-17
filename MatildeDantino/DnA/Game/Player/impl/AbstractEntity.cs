@@ -1,6 +1,6 @@
 using DnA.Game.Box.Impl;
 using DnA.Game.Box.Api;
-using DnA.Game.enitity;
+using DnA.Game.Common;
 
 namespace DnA {
 
