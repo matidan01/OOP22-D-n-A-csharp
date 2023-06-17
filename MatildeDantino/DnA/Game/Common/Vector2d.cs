@@ -1,3 +1,5 @@
+using System.Numerics;
+
 namespace DnA {
 
     /// <summary>
@@ -75,6 +77,11 @@ namespace DnA {
             result = prime * result + _x.GetHashCode();
             result = prime * result + _y.GetHashCode();
             return result;
+        }
+
+        public static implicit operator Vector2(Vector2d v)
+        {
+            throw new NotImplementedException();
         }
     }
 

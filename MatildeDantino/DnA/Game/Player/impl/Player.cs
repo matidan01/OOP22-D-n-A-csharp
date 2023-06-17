@@ -3,7 +3,7 @@ namespace DnA {
     /// <summary>
     /// IPlayer implementation.
     /// </summary>
-    public class Player : IPlayer
+    public class Player : AbstractEntity,IPlayer
     {
         private readonly IPlayer.PlayerType _playerType;
         private readonly State _playerState = new State();
