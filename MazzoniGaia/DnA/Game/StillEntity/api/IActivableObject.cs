@@ -1,6 +1,6 @@
 
 
-using DnA.Game.enitity.Api;
+using DnA.Game.StillEntity.api;
 /// <summery>
 /// A class that allows some Entities to be activated.
 /// </summary>

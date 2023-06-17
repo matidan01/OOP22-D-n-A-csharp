@@ -1,6 +1,6 @@
 
 
-namespace DnA.Game.enitity.StillEntity.impl{
+namespace DnA.Game.Entity.StillEntity.impl{
     public class ActivableObjectImpl : AbstractEntity : IActivableObject
     {
         

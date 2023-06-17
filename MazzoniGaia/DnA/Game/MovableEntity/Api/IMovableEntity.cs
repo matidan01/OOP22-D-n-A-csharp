@@ -1,8 +1,8 @@
 
 
-using DnA.Game.enitity.Api;
+using DnA.Game.Entity.api;
 
-namespace DnA.Game.enitity.MovableEntity.Api{
+namespace DnA.Game.MovableEntity.Api{
     public interface IMovableEntity : IEntity
     {
         Vector2d GetVector();
@@ -13,9 +13,9 @@ namespace DnA.Game.enitity.MovableEntity.Api{
 
         void SetVectorX(double x);
 
-        void resetY();
+        void ResetY();
 
-        void resetX();
+        void ResetX();
 
         void Update();
 

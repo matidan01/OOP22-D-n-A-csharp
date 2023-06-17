@@ -1,8 +1,7 @@
 
+using DnA.Game.Entity.MovableEntity.impl;
 
-using DnA.Game.enitity.MovableEntity.impl;
-
-namespace DnA.Game.enitity.Api{
+namespace DnA.Game.Entity.api{
     /// <summary>
     ///  A factory with the purpose of being able to create various types of entities.
     /// </summary>

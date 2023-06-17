@@ -1,9 +1,10 @@
 
 
-using DnA.Game.enitity.Api;
-using DnA.Game.enitity.MovableEntity.impl;
 
-namespace DnA.Game.enitity.impl{
+
+using DnA.Game.Entity.api;
+
+namespace DnA.Game.Entity.impl{
     public class EntityFactory : IEntityFactory
     {
         /// <summary>

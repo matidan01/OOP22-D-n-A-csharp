@@ -1,7 +1,7 @@
 
-using DnA.Game.Common;
 
-namespace DnA.Game.enitity.Api{
+
+namespace DnA.Game.Entity.api{
     public interface IEntity
     {
         /// <summary>
@@ -71,19 +71,19 @@ namespace DnA.Game.enitity.Api{
         /// Sets the x-axis of the position.
         /// </summary>
         /// <param name="x">The x-axis value.</param>
-        void GetPositionX(Double x);
+        void GetPositionX(double x);
 
         /// <summary>
         /// Sets the x-axis of the position.
         /// </summary>
         /// <param name="y">The y-axis value.</param>
-        void SetPositionY(Double y);
+        void SetPositionY(double y);
 
         /// <summary>
         /// Gets the type fp the entity.
         /// </summary>
         /// <returns>The type of the entity. </returns>
-        IEntity.EntityType GetType();
+        EntityType GetType();
     
     }
 
