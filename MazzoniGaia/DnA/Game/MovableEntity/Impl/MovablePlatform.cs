@@ -1,22 +1,23 @@
 
-using DnA.Game.enitity.Api;
+using DnA.Game.Entity.api;
 
-namespace DnA.Game.enitity.MovableEntity.impl{
+namespace DnA.Game.Entity.MovableEntity.impl{
     public class MovablePlatform : AbstractMovableEntity 
     {
+        public MovablePlatform(Position2d position, Vector2d vector, double height, double width, IEntity.EntityType type, Position2d finalPosition) : base(pos, vet, height, width, type)
+        {
+            _originalPosition = position;
+            _finalPosition = finalPosition;
+            _lastPostition = position;
+            _previousVector = new(0, 0);
+        }
+
         private Position2d originalPosition { get; set; }
         private Position2d finalPosition { get; set; }
         private Position2d lastPostition { get; set; }
         private Vector2d previousVector { get; set; }
 
-        public MovablePlatform(Position2d position, Vector2d vector, double height, double width, Position2d finalPosition)
-            : base(position, vector, height, width, IEntity.EntityType.MOVABLEPLATFORM);
-        {
-            _originalPosition = position;
-            _finalPosition = finalPosition;
-            _lastPosition = lastPosition;
-            _previousVector = new Vector2d(0, 0);
-        }
+        
 
         /// <summary>
         /// A method that finds the direction in which the platform needs to move, 
@@ -24,7 +25,7 @@ namespace DnA.Game.enitity.MovableEntity.impl{
         /// </summary>
         /// <param name="position1"> The stating position of the platform </param>
         /// <param name="position2"> The position the platform wants to reach </param>
-        public void findVector(Position2d position1, Position2d position2)
+        public void FindVector(Position2d position1, Position2d position2)
         {
             double x = 0.0;
             double y = 0.0;
@@ -36,7 +37,7 @@ namespace DnA.Game.enitity.MovableEntity.impl{
             {
                 y = position2.IsAbove(position1) ? -0.5 : +0.5; 
             }
-            this.setVector(new Vector2d(x, y));
+            
         }
         /// <summary>
         /// A method that allows the platform to move from a starting point to a final point.
@@ -45,7 +46,7 @@ namespace DnA.Game.enitity.MovableEntity.impl{
         /// <param name="Position2d"> the final position that the platform wants to reach </param>
         public void Move(Position2d position1, Position2d position2)
         {
-            _previousVector = _.getVector();
+             = _.getVector();
             findVector(position1, position2);
         }
 
@@ -53,7 +54,7 @@ namespace DnA.Game.enitity.MovableEntity.impl{
         /// Checks wheter the platform position is between itrs original position and its final position.
         /// </summary>
         /// <returns> false if the platform has gone out of range. </returns>
-        public boolean IsBetweenRange()
+        public bool IsBetweenRange()
         {
             double maxX = Math.Max(_originalPosition._x , _finalPosition._x);
             double minX =  Math.Min(_originalPosition._x, _finalPosition._x);
@@ -65,7 +66,7 @@ namespace DnA.Game.enitity.MovableEntity.impl{
         /// Checks whether the platform has gone out of range, and if it did, 
         /// sets its position to its last position. 
         /// </summary>
-        public void findLimit()
+        public void FindLimit()
         {
             if (!IsBetweenRange())
             {
