@@ -71,7 +71,7 @@ namespace DnA.Game.Entity.api{
         /// Sets the x-axis of the position.
         /// </summary>
         /// <param name="x">The x-axis value.</param>
-        void GetPositionX(double x);
+        void SetPositionX(double x);
 
         /// <summary>
         /// Sets the x-axis of the position.

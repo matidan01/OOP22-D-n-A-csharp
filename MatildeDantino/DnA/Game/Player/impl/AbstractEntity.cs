@@ -39,7 +39,7 @@ namespace DnA.Game.Player.impl {
         public void SetPositionX(double x) => this.SetPosition(new Position2d(x, this.GetPosition().GetY()));
 
         /// <inheritdoc/>
-        public void SetPositionY(double y) => this.SetPosition(new Position2d(this.GetPosition().GetX(), y);
+        public void SetPositionY(double y) => this.SetPosition(new Position2d(this.GetPosition().GetX(), y));
 
         IEntity.EntityType IEntity.GetType() => _type;
 
