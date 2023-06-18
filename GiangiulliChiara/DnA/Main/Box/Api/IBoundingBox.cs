@@ -1,6 +1,6 @@
-using DnA.Game.Common;
-
-namespace DnA.Game.Box.Api{
+using DnA.Main.Common;
+namespace DnA.Main.Box.Api
+{
     /// <summary>
     /// Interface for the boundaries of an <see cref="Entity"/>.
     /// </summary>

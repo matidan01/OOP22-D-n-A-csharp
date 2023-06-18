@@ -1,6 +1,6 @@
 using System;
-
-namespace DnA.Game.Common{
+namespace DnA.Main.Common
+{
     /// <summary>
     /// A class representing a vector in 2-dimensional space that describes
     /// the direction and velocity of a movement.
@@ -61,7 +61,7 @@ namespace DnA.Game.Common{
         /// </summary>
         /// <param name="obj">The object to compare with the current Vector2d object.</param>
         /// <returns>true if the specified object is equal to the current Vector2d object; otherwise, false.</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (!(obj is Vector2d))
             {

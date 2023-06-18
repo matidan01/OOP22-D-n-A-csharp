@@ -1,7 +1,7 @@
-using DnA.Game.Box.Api;
-using DnA.Game.Common;
-
-namespace DnA.Game.Box.Impl{
+using DnA.Main.Box.Api;
+using DnA.Main.Common;
+namespace DnA.Main.Box.Impl
+{
 
     /// <summary>
     /// Class that implements the <see cref="IBoundingBox"/> interface with a rectangular shape.

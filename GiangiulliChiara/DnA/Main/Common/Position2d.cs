@@ -1,10 +1,11 @@
 using System;
-
-namespace DnA.Game.Common{
+namespace DnA.Main.Common
+{
     /// <summary>
     /// A class representing a point in a 2-dimensional space.
     /// </summary>
-    public class Position2d{
+    public class Position2d
+    {
         private readonly double _x, _y;
 
     /// <summary>
