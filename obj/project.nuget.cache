@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "hSwj0o4Gld2EcZe8dpnoEO1mr/qeVRpqsg05lQNZjk/hk0HTbyaVwrTjSKY9JWsvR9xY7pF5GIk+5+9o7zSOCw==",
+  "dgSpecHash": "RvHRSy8EiccbwQgmWyhoiOPSFqvBpDJOl1ufP+WsvsVPbQT6uj6tA/C7QxLGvmEEaPMfesq6OZKA3jk3v0ujhw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Utente\\Desktop\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\chiar\\Desktop\\Chiara\\uni\\secondo_anno\\programmazione_ad_oggetti\\progetto\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chiar\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\chiar\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\chiar\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512"
+  ],
   "logs": []
 }
