@@ -1,3 +1,4 @@
+<<<<<<< HEAD:GiangiulliChiara/DnA/Main/obj/project.nuget.cache
 {
   "version": 2,
   "dgSpecHash": "Rs71PDyviOB1aci/Jrv3pcnM6qKjeE9CdpNd11Fns1iz6eGQiUlNh4Slny9o+BEJjw3FGVUnZoqi8vV2Uh0liQ==",
@@ -5,4 +6,13 @@
   "projectFilePath": "c:\\Users\\gaiam\\OneDrive\\Desktop\\PROGRAMMAZIONE_AD_OGGETTI\\D-n-A\\Csharp\\OOP22-D-n-A-csharp\\GiangiulliChiara\\DnA\\Game\\game.csproj",
   "expectedPackageFiles": [],
   "logs": []
+=======
+{
+  "version": 2,
+  "dgSpecHash": "8sokaXCzGcMa1Gv1fZQ1q3OuchsPrYj7n2N9SoSHvL5Bf4CrDoJD/opZ5IiTTHwfI0cq4FnAsx8tkkFmkIO8xA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Utente\\Desktop\\OOP22-D-n-A-csharp\\GiangiulliChiara\\DnA\\Game\\game.csproj",
+  "expectedPackageFiles": [],
+  "logs": []
+>>>>>>> cadc69c675895f80f98cba4044324425c5997bee:GiangiulliChiara/DnA/Game/obj/project.nuget.cache
 }
