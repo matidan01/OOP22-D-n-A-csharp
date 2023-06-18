@@ -43,6 +43,11 @@ namespace DnA.Main.Extra
             throw new NotImplementedException();
         }
 
+        internal void SetPosition(Position2d position2d)
+        {
+            throw new NotImplementedException();
+        }
+
         internal void SetPositionY(double v)
         {
             throw new NotImplementedException();
