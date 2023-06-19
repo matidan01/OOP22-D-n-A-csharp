@@ -1,8 +1,7 @@
 
 
-
-
 using DnA.Game.Entity.api;
+using DnA.Main.Common;
 
 namespace DnA.Game.Entity.impl{
     public class EntityFactory : IEntityFactory
