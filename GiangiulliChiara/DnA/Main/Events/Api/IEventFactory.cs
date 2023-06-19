@@ -1,10 +1,12 @@
 using DnA.Main.Extra;
+using OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.StillEntity.Impl;
+
 namespace DnA.Main.Events.Api
 {
-/// <summary>
-/// Interface of a factory that creates events.
-/// </summary>
-public interface IEventFactory
+    /// <summary>
+    /// Interface of a factory that creates events.
+    /// </summary>
+    public interface IEventFactory
 {
     /// <summary>
     /// Models the collision event with a platform.
