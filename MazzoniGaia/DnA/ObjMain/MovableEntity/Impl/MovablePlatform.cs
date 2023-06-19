@@ -1,24 +1,28 @@
 
-using DnA.Game.Common;
+
 using DnA.Game.Entity.api;
+using DnA.Game.Player.impl;
+using DnA.Main.Common;
 
 namespace DnA.Game.Entity.MovableEntity.impl{
     public class MovablePlatform : AbstractMovableEntity 
     {
-        public MovablePlatform(Position2d position, Vector2d vector, double height, double width, IEntity.EntityType type, Position2d finalPosition) : base(pos, vet, height, width, type)
+        private Position2d originalPosition;
+        private Position2d finalPosition;
+        private Position2d lastPosition;
+        private Vector2d previousVector;
+        public MovablePlatform(Position2d position, Vector2d vector, double height, double width, IEntity.EntityType type, Position2d fPosition) : base(position, vector, height, width, type)
         {
-            _originalPosition = position;
-            _finalPosition = finalPosition;
-            _lastPostition = position;
-            _previousVector = new(0, 0);
+            originalPosition = position;
+            finalPosition = fPosition;
+            lastPosition = position;
+            previousVector = new(0, 0);
         }
 
-        private Position2d originalPosition { get; set; }
-        private Position2d finalPosition { get; set; }
-        private Position2d lastPostition { get; set; }
-        private Vector2d previousVector { get; set; }
-
-        
+        public void SetLastPosition()
+        {
+            lastPosition = GetPosition();
+        }
 
         /// <summary>
         /// A method that finds the direction in which the platform needs to move, 
@@ -30,11 +34,11 @@ namespace DnA.Game.Entity.MovableEntity.impl{
         {
             double x = 0.0;
             double y = 0.0;
-            if (position1._x != position2._x)
+            if (position1.GetX != position2.GetX)
             {
                 x = position2.IsOnTheRight(position1) ? +0.5 : -0.5;
             }
-            if (position1._y != position2._y)
+            if (position1.GetY != position2.GetY)
             {
                 y = position2.IsAbove(position1) ? -0.5 : +0.5; 
             }
@@ -47,8 +51,8 @@ namespace DnA.Game.Entity.MovableEntity.impl{
         /// <param name="Position2d"> the final position that the platform wants to reach </param>
         public void Move(Position2d position1, Position2d position2)
         {
-             = _.getVector();
-            findVector(position1, position2);
+            previousVector = GetVector();
+            FindVector(position1, position2);
         }
 
         /// <summary>
@@ -57,10 +61,12 @@ namespace DnA.Game.Entity.MovableEntity.impl{
         /// <returns> false if the platform has gone out of range. </returns>
         public bool IsBetweenRange()
         {
-            double maxX = Math.Max(_originalPosition._x , _finalPosition._x);
-            double minX =  Math.Min(_originalPosition._x, _finalPosition._x);
-            double maxY = Math.Max(_originalPosition._y, _finalPosition._y);
-            double minY = Math.Min(_originalPosition._y, _finalPosition._y);
+            double maxX = Math.Max(originalPosition.GetX() , finalPosition.GetX());
+            double minX =  Math.Min(originalPosition.GetX(), finalPosition.GetX());
+            double maxY = Math.Max(originalPosition.GetY(), finalPosition.GetY());
+            double minY = Math.Min(originalPosition.GetY(), finalPosition.GetY());
+            return GetPosition().GetX() >= minX && GetPosition().GetX() <= maxX 
+            && GetPosition().GetY() <= maxY && GetPosition().GetY() >= minY;
         }
 
         /// <summary>
@@ -71,16 +77,18 @@ namespace DnA.Game.Entity.MovableEntity.impl{
         {
             if (!IsBetweenRange())
             {
-                _.SetPosition(_lastPosition);
-                _.SetVector(new Vector2d(0, 0));
+                SetPosition(lastPosition);
+                SetVector(new Vector2d(0, 0));
             }
         }
-
+        /// <summary>
+        /// Updates the position of the movablePlatform.
+        /// </summary>
         public void MovablePlatformUpdate()
         {
-            _SetLastPosition();
-            _Update();
-            _FindLimit();
+            SetLastPosition();
+            Update();
+            FindLimit();
         }
 
 

@@ -1,6 +1,7 @@
 
 
 using DnA.Game.Entity.api;
+using DnA.Game.Entity.MovableEntity.impl;
 using DnA.Main.Common;
 
 namespace DnA.Game.Entity.impl{
