@@ -19,6 +19,10 @@ namespace DnA.Game.Entity.MovableEntity.impl{
             previousVector = new(0, 0);
         }
 
+        public Position2d GetOriginalPosition() => originalPosition;
+
+        public Position2d GetFinalPosition() => finalPosition;
+
         public void SetLastPosition()
         {
             lastPosition = GetPosition();

@@ -1,10 +1,11 @@
 
 
-using DnA.Game.StillEntity.api;
+
+
+using DnA.Game.Entity.api;
 /// <summery>
 /// A class that allows some Entities to be activated.
 /// </summary>
-
 namespace DnA.Game.enitity.StillEntity.api{
     public interface IActivableObject : IEntity
     {
