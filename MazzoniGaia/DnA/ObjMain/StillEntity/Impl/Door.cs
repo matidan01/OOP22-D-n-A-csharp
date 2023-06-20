@@ -25,8 +25,8 @@ namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.StillEntity.Impl {
             CLOSED_DOOR
         }
 
-        private DoorState state;
-        private IPlayer? player = null;
+        private DoorState _state;
+        private IPlayer? _player = null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Door"/> class.
@@ -38,7 +38,7 @@ namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.StillEntity.Impl {
         public Door(Position2d position, double height, double width, IEntity.EntityType type)
             : base(position, height, width, type)
         {
-            state = DoorState.CLOSED_DOOR;
+            _state = DoorState.CLOSED_DOOR;
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.StillEntity.Impl {
         /// <returns>The state of the door.</returns>
         public DoorState GetDoorState()
         {
-            return state;
+            return _state;
         }
 
         /// <summary>
@@ -57,25 +57,25 @@ namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.StillEntity.Impl {
         /// <param name="player">The player standing in front of the door.</param>
         public void OpenDoor(IPlayer player)
         {
-            if (state == DoorState.CLOSED_DOOR)
+            if (_state == DoorState.CLOSED_DOOR)
             {
                 switch (player.GetPlayerType())
                 {
                     case IPlayer.PlayerType.ANGEL:
                         {
-                            if (GetType() == IEntity.EntityType.ANGEL_DOOR)
+                            if (_type.Equals(IEntity.EntityType.ANGEL_DOOR))
                             {
-                                state = DoorState.OPEN_DOOR;
-                                player = player;
+                                _state = DoorState.OPEN_DOOR;
+                                _player = player;
                             }
                             break;
                         }
                     case IPlayer.PlayerType.DEVIL:
                         {
-                            if (GetType() == IEntity.EntityType.DEVIL_DOOR)
+                            if (_type.Equals(IEntity.EntityType.DEVIL_DOOR))
                             {
-                                state = DoorState.OPEN_DOOR;
-                                player = player;
+                                _state = DoorState.OPEN_DOOR;
+                                _player = player;
                             }
                             break;
                         }
@@ -91,7 +91,7 @@ namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.StillEntity.Impl {
         /// <returns>The player opening the door.</returns>
         public IPlayer? GetPlayer()
         {
-            return player;
+            return _player;
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.StillEntity.Impl {
         /// </summary>
         public void ResetPlayer()
         {
-            player = null;
+            _player = null;
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.StillEntity.Impl {
         /// </summary>
         public void CloseDoor()
         {
-            state = DoorState.CLOSED_DOOR;
+            _state = DoorState.CLOSED_DOOR;
         }
     }
 }
