@@ -1,9 +1,8 @@
-
-
-using DnA.Game.Entity.api;
 using DnA.Main.Common;
+using OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.Entity.Api;
 
-namespace DnA.Game.MovableEntity.Api{
+namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.MovableEntity.Api
+{
     public interface IMovableEntity : IEntity
     {
         Vector2d GetVector();

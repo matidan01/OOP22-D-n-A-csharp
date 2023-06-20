@@ -2,8 +2,11 @@ using DnA.Main.Box.Impl;
 using DnA.Main.Box.Api;
 using DnA.Main.Common;
 using DnA.Game.Entity.api;
+using OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.Entity.Api;
 
-namespace DnA.Game.Player.impl {
+
+namespace DnA.Game.Player.impl
+{
 
     /// <summary>
     /// Abstract class that implements the Entity interface.

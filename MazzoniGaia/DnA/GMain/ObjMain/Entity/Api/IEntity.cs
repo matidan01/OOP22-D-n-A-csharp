@@ -1,7 +1,7 @@
-
 using DnA.Main.Common;
 
-namespace DnA.Game.Entity.api{
+namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.Entity.Api
+{
     public interface IEntity
     {
         /// <summary>
@@ -54,7 +54,7 @@ namespace DnA.Game.Entity.api{
             /// </summary>
             DIAMOND
         }
-    
+
         /// <summary>
         /// Returns the position of the entity.
         /// </summary>
@@ -84,7 +84,6 @@ namespace DnA.Game.Entity.api{
         /// </summary>
         /// <returns>The type of the entity. </returns>
         EntityType GetType();
-    
-    }
 
+    }
 }

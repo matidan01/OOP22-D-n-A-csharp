@@ -1,11 +1,14 @@
 
-using DnA.Game.Entity.MovableEntity.impl;
+using DnA.Main.Common;
+using OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.MovableEntity.Impl;
 
-namespace DnA.Game.Entity.api{
+namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.Entity.Api
+{
     /// <summary>
     ///  A factory with the purpose of being able to create various types of entities.
     /// </summary>
-    public interface IEntityFactory {
+    public interface IEntityFactory
+    {
 
         /// <summary>
         /// A constant for the height of some entities.
@@ -59,7 +62,7 @@ namespace DnA.Game.Entity.api{
         /// A constant for the width of the player.
         /// </summary>
         const int PLAYER_WIDTH = 6;
-    
+
         /// <summary>
         /// A method that creates an Entity of a wanted type.
         /// </summary>
@@ -71,7 +74,7 @@ namespace DnA.Game.Entity.api{
         /// Two positions should be passed if the Entity being created is of the type MOVABLEPLATFORM
         /// <returns> the Entity created </returns>
         /// </summary>
-    IEntity CreateEntity(MovablePlatform? movablePlatform, IEntity.EntityType type, params Position2d[] position); 
+        IEntity CreateEntity(MovablePlatform? movablePlatform, IEntity.EntityType type, params Position2d[] position);
 
     }
 }
