@@ -1,8 +1,7 @@
-
-using DnA;
 using DnA.Game.Entity.api;
-using DnA.Game.Common;
+using DnA.Main.Common;
 using DnA.Game.MovableEntity.Api;
+
 /// <summary>
 /// Abstract class that implements the <see cref="MovableEntity"/> interface.
 /// </summary>
