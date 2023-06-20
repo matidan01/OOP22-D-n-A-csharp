@@ -5,6 +5,7 @@ using DnA.Game.Entity.MovableEntity.impl;
 using DnA.Game.Player.api;
 using DnA.Game.Player.impl;
 using DnA.Main.Common;
+using static DnA.Game.Entity.api.IEntity;
 
 /// <summary>
 /// An ActivableObject that moves its platform when activated by the player.
