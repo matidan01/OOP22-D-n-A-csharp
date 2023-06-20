@@ -1,5 +1,4 @@
 using DnA.Game.MovableEntity.Api;
-using DnA.Game.Player.impl;
 
 namespace DnA.Game.Player.api {
 

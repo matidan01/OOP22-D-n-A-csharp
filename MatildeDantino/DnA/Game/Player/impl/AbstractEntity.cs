@@ -1,6 +1,6 @@
-using DnA.Game.Box.Impl;
-using DnA.Game.Box.Api;
-using DnA.Game.Common;
+using DnA.Main.Box.Impl;
+using DnA.Main.Box.Api;
+using DnA.Main.Common;
 using DnA.Game.Entity.api;
 
 namespace DnA.Game.Player.impl {

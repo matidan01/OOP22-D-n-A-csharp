@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GiangiulliChiara", "Giangiu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DnA", "DnA", "{F421DDEB-A0B5-4296-A5A5-D2C635C1695E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "game", "GiangiulliChiara\DnA\Game\game.csproj", "{1385C385-EA94-45FA-BBCB-8D265BDF456C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
