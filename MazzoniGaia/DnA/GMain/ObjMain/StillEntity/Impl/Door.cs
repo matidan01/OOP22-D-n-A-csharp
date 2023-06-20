@@ -1,5 +1,5 @@
-using DnA.Game.Entity.api;
-using DnA.Game.Player.api;
+using OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.Entity.Impl;
+using DnA
 using DnA.Game.Player.impl;
 using DnA.Main.Common;
 
