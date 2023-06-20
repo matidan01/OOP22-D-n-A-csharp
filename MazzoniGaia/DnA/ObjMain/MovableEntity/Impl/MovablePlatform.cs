@@ -7,25 +7,25 @@ using DnA.Main.Common;
 namespace DnA.Game.Entity.MovableEntity.impl{
     public class MovablePlatform : AbstractMovableEntity 
     {
-        private Position2d originalPosition;
-        private Position2d finalPosition;
-        private Position2d lastPosition;
-        private Vector2d previousVector;
+        private Position2d _originalPosition;
+        private Position2d _finalPosition;
+        private Position2d _lastPosition;
+        private Vector2d _previousVector;
         public MovablePlatform(Position2d position, Vector2d vector, double height, double width, IEntity.EntityType type, Position2d fPosition) : base(position, vector, height, width, type)
         {
-            originalPosition = position;
-            finalPosition = fPosition;
-            lastPosition = position;
-            previousVector = new(0, 0);
+            _originalPosition = position;
+            _finalPosition = fPosition;
+            _lastPosition = position;
+            _previousVector = new(0, 0);
         }
 
-        public Position2d GetOriginalPosition() => originalPosition;
+        public Position2d GetOriginalPosition() => _originalPosition;
 
-        public Position2d GetFinalPosition() => finalPosition;
+        public Position2d GetFinalPosition() => _finalPosition;
 
         public void SetLastPosition()
         {
-            lastPosition = GetPosition();
+            _lastPosition = GetPosition();
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace DnA.Game.Entity.MovableEntity.impl{
             {
                 y = position2.IsAbove(position1) ? -0.5 : +0.5; 
             }
-            
+            SetVector(new Vector2d(x, y));
         }
         /// <summary>
         /// A method that allows the platform to move from a starting point to a final point.
@@ -55,7 +55,7 @@ namespace DnA.Game.Entity.MovableEntity.impl{
         /// <param name="Position2d"> the final position that the platform wants to reach </param>
         public void Move(Position2d position1, Position2d position2)
         {
-            previousVector = GetVector();
+            _previousVector = GetVector();
             FindVector(position1, position2);
         }
 
@@ -65,10 +65,10 @@ namespace DnA.Game.Entity.MovableEntity.impl{
         /// <returns> false if the platform has gone out of range. </returns>
         public bool IsBetweenRange()
         {
-            double maxX = Math.Max(originalPosition.GetX() , finalPosition.GetX());
-            double minX =  Math.Min(originalPosition.GetX(), finalPosition.GetX());
-            double maxY = Math.Max(originalPosition.GetY(), finalPosition.GetY());
-            double minY = Math.Min(originalPosition.GetY(), finalPosition.GetY());
+            double maxX = Math.Max(_originalPosition.GetX() , _finalPosition.GetX());
+            double minX =  Math.Min(_originalPosition.GetX(), _finalPosition.GetX());
+            double maxY = Math.Max(_originalPosition.GetY(), _finalPosition.GetY());
+            double minY = Math.Min(_originalPosition.GetY(), _finalPosition.GetY());
             return GetPosition().GetX() >= minX && GetPosition().GetX() <= maxX 
             && GetPosition().GetY() <= maxY && GetPosition().GetY() >= minY;
         }
@@ -81,7 +81,7 @@ namespace DnA.Game.Entity.MovableEntity.impl{
         {
             if (!IsBetweenRange())
             {
-                SetPosition(lastPosition);
+                SetPosition(_lastPosition);
                 SetVector(new Vector2d(0, 0));
             }
         }

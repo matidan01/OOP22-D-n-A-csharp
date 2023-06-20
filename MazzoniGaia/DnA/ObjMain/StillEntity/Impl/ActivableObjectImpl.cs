@@ -15,14 +15,14 @@ using DnA.Main.Common;
 namespace DnA.Game.Entity.StillEntity.impl{
     public class ActivableObjectImpl : AbstractEntity, IActivableObject
     {
-        private bool isActive;
-        private IPlayer? player;
-        private readonly MovablePlatform movablePlatform;
+        private bool _isActive;
+        private IPlayer? _player;
+        private readonly MovablePlatform _movablePlatform;
         
         public ActivableObjectImpl(Position2d pos, double height, double width, MovablePlatform movablePlatform, EntityType type)
         : base(pos, height, width, type)
         {
-            this.movablePlatform = movablePlatform;
+            _movablePlatform = movablePlatform;
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace DnA.Game.Entity.StillEntity.impl{
         /// <param name="player"></param>
         public void SetPlayer(IPlayer player)
         {
-            this.player = player;
+            _player = player;
         }
 
         /// <summary>
@@ -40,12 +40,12 @@ namespace DnA.Game.Entity.StillEntity.impl{
         /// <returns></returns>
         public IPlayer? GetPlayer()
         {
-            return player;
+            return _player;
         }
 
         public void ResetPlayer()
         {
-            player = null;
+            _player = null;
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace DnA.Game.Entity.StillEntity.impl{
         /// <returns></returns>
         public MovablePlatform GetMovablePlatform()
         {
-            return movablePlatform;
+            return _movablePlatform;
         }
 
         /// <summary>
@@ -62,8 +62,8 @@ namespace DnA.Game.Entity.StillEntity.impl{
         /// </summary>
         public void Activate()
         {
-            isActive = true;
-            movablePlatform.Move(movablePlatform.GetOriginalPosition(), movablePlatform.GetFinalPosition());
+            _isActive = true;
+            _movablePlatform.Move(_movablePlatform.GetOriginalPosition(), _movablePlatform.GetFinalPosition());
         }
 
         /// <summary>
@@ -71,8 +71,8 @@ namespace DnA.Game.Entity.StillEntity.impl{
         /// </summary>
         public void Deactivate()
         {
-            isActive = false;
-            movablePlatform.Move(movablePlatform.GetFinalPosition(), movablePlatform.GetOriginalPosition());
+            _isActive = false;
+            _movablePlatform.Move(_movablePlatform.GetFinalPosition(), _movablePlatform.GetOriginalPosition());
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace DnA.Game.Entity.StillEntity.impl{
         /// <returns></returns>
         public bool IsActivated()
         {
-            return isActive;
+            return _isActive;
         }
     }
 }
