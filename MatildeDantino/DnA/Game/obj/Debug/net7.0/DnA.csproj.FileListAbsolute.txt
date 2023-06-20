@@ -1,0 +1,5 @@
+C:\Users\Utente\Desktop\CSHARPDEF\OOP22-D-n-A-csharp\MatildeDantino\DnA\Game\obj\Debug\net7.0\DnA.csproj.AssemblyReference.cache
+C:\Users\Utente\Desktop\CSHARPDEF\OOP22-D-n-A-csharp\MatildeDantino\DnA\Game\obj\Debug\net7.0\DnA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Utente\Desktop\CSHARPDEF\OOP22-D-n-A-csharp\MatildeDantino\DnA\Game\obj\Debug\net7.0\DnA.AssemblyInfoInputs.cache
+C:\Users\Utente\Desktop\CSHARPDEF\OOP22-D-n-A-csharp\MatildeDantino\DnA\Game\obj\Debug\net7.0\DnA.AssemblyInfo.cs
+C:\Users\Utente\Desktop\CSHARPDEF\OOP22-D-n-A-csharp\MatildeDantino\DnA\Game\obj\Debug\net7.0\DnA.csproj.CoreCompileInputs.cache

@@ -6,6 +6,8 @@ using DnA.Main.Events.Impl;
 using DnA.Main.Events.Api;
 using DnA.Main.Common;
 using static DnA.Main.Extra.Entity;
+using OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.StillEntity.Impl;
+
 namespace DnA.Main.Game.Impl
 {
     /// <summary>
@@ -248,7 +250,7 @@ namespace DnA.Main.Game.Impl
         /// <param name="pos">The x coordinate of the character's position.</param>
         /// <param name="length">The length of the character.</param>
         /// <returns>true if the character is colliding with a vertical border.</returns>
-        private bool CheckVerticalBorders(double pos, double length)
+        public bool CheckVerticalBorders(double pos, double length)
         {
             var sxBorder = boundingBox.GetPosition().GetX();
             var dxBorder = boundingBox.GetPosition().GetX() + boundingBox.GetWidth();
@@ -262,7 +264,7 @@ namespace DnA.Main.Game.Impl
         /// <param name="pos">The y-coordinate of the character's position.</param>
         /// <param name="height">The height of the character.</param>
         /// <returns>true if the character is colliding with a horizontal border.</returns>
-        private bool CheckHorizontalBorders(double pos, double height)
+        public bool CheckHorizontalBorders(double pos, double height)
         {
             var northBorder = boundingBox.GetPosition().GetY();
             var southBorder = boundingBox.GetPosition().GetY() + boundingBox.GetHeight();
