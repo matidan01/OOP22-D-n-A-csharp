@@ -5,22 +5,26 @@ using DnA.Main.Box.Impl;
 using DnA.Main.Events.Impl;
 using DnA.Main.Events.Api;
 using DnA.Main.Common;
-using static DnA.Main.Extra.Entity;
+using DnA.Game.Player.impl;
+using DnA.GMain.ObjMain.Entity.Api;
+using DnA.Game.Player.api;
+using DnA.ObjMain.StillEntity.Impl;
+using DnA.GMain.ObjMain.MovableEntity.Impl;
 
 namespace DnA.Main.Game.Impl
 {
     /// <summary>
     /// Represents the state of the game.
     /// </summary>
-    public class GameStateImpl : IGameState
+    public class GameState : IGameState
     {
         /// <summary>
         /// The constant value of the game's gravity.
         /// </summary>
         public const double GRAVITY = 0.8;
 
-        private readonly List<Entity> _entities;
-        private readonly List<Player> _characters;
+        private readonly List<IEntity> _entities;
+        private readonly List<IPlayer> _characters;
         private readonly IBoundingBox _boundingBox;
         private readonly IEventFactory _eventFactory = new EventFactoryImpl();
         private readonly EventQueue _eventQueue = new ();
@@ -33,11 +37,11 @@ namespace DnA.Main.Game.Impl
         /// <param name="height">The height of the game.</param>
         /// <param name="entities">The entities of the game.</param>
         /// <param name="players">The players of the game.</param>
-        public GameStateImpl(int width, int height, List<Entity> entities, List<Player> players)
+        public GameState(int width, int height, List<IEntity> entities, List<IPlayer> players)
         {
             _boundingBox = new RectBoundingBox(new Position2d(0, 0), height, width);
-            _entities = new List<Entity>(entities);
-            _characters = new List<Player>(players);
+            _entities = new List<IEntity>(entities);
+            _characters = new List<IPlayer>(players);
             _score = 0;
         }
 
@@ -67,11 +71,11 @@ namespace DnA.Main.Game.Impl
         /// Manages the gravity of the player.
         /// </summary>
         /// <param name="player">The player to manage.</param>
-        private static void Gravity(Player player)
+        private static void Gravity(IPlayer player)
         {
             if (player.GetVector().GetY() < GRAVITY)
             {
-                player.GetVector().SumY(Player.STANDARDVELOCITY);
+                player.GetVector().SumY(IPlayer.STANDARDVELOCITY);
             }
         }
 
@@ -88,7 +92,7 @@ namespace DnA.Main.Game.Impl
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public void AddEntity(Entity e)
+        public void AddEntity(IEntity e)
         {
             _entities.Add(e);
         }
@@ -97,7 +101,7 @@ namespace DnA.Main.Game.Impl
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public void RemoveEntity(Entity e)
+        public void RemoveEntity(IEntity e)
         {
             _entities.Remove(e);
         }
@@ -106,18 +110,18 @@ namespace DnA.Main.Game.Impl
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public List<Entity> GetEntities()
+        public List<IEntity> GetEntities()
         {
-            return new List<Entity>(_entities);
+            return new List<IEntity>(_entities);
         }
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public List<Player> GetCharacters()
+        public List<IPlayer> GetCharacters()
         {
-            return new List<Player>(_characters);
+            return new List<IPlayer>(_characters);
         }
 
         /// <summary>
@@ -133,7 +137,7 @@ namespace DnA.Main.Game.Impl
         /// Manages when a character leaves an activable object or a door.
         /// </summary>
         /// <param name="character">The player to check.</param>
-        private void FreeObject(Player character)
+        private void FreeObject(IPlayer character)
         {
             var box = character.GetBoundingBox();
             _entities
@@ -179,7 +183,7 @@ namespace DnA.Main.Game.Impl
         {
             return _entities
                 .OfType<Door>()
-                .Where(entity => entity.GetDoorState() == Door.DoorState.OpenDoor)
+                .Where(entity => entity.GetDoorState() == Door.DoorState.OPEN_DOOR)
                 .Count() == 2;
         }
 
@@ -187,7 +191,7 @@ namespace DnA.Main.Game.Impl
         /// Checks the collision of a character with the entities in the game.
         /// </summary>
         /// <param name="character">The moving player.</param>
-        private void CheckCollisions(Player character)
+        private void CheckCollisions(IPlayer character)
         {
             var chPos = character.GetPosition().Sum(character.GetVector());
             var chHeight = character.GetBoundingBox().GetHeight();
@@ -275,7 +279,7 @@ namespace DnA.Main.Game.Impl
         /// Checks the collision of a character with the borders.
         /// </summary>
         /// <param name="character">The moving player.</param>
-        private void CheckBorders(Player character)
+        private void CheckBorders(IPlayer character)
         {
             var chPos = character.GetPosition().Sum(character.GetVector());
             var chHeight = character.GetBoundingBox().GetHeight();

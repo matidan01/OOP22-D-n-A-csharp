@@ -1,5 +1,6 @@
+using DnA.Game.Player.api;
+using DnA.GMain.ObjMain.Entity.Api;
 using DnA.Main.Box.Api;
-using DnA.Main.Extra;
 namespace DnA.Main.Game.Api
 {
     /// <summary>
@@ -22,25 +23,25 @@ namespace DnA.Main.Game.Api
         /// Adds a new <see cref="Entity"/> to the game.
         /// </summary>
         /// <param name="e">The Entity to add.</param>
-        void AddEntity(Entity e);
+        void AddEntity(IEntity e);
 
         /// <summary>
         /// Removes an <see cref="Entity"/> from the game.
         /// </summary>
         /// <param name="e">The Entity to remove.</param>
-        void RemoveEntity(Entity e);
+        void RemoveEntity(IEntity e);
 
         /// <summary>
         /// Returns the list of <see cref="Entity"/> of the game.
         /// </summary>
         /// <returns>The list of entities.</returns>
-        List<Entity> GetEntities();
+        List<IEntity> GetEntities();
 
         /// <summary>
         /// Returns the list of characters of the game.
         /// </summary>
         /// <returns>The list of characters.</returns>
-        List<Player> GetCharacters();
+        List<IPlayer> GetCharacters();
         
         /// <summary>
         /// Returns the score of the game.

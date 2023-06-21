@@ -1,5 +1,11 @@
+using DnA.Game.Player.api;
+using DnA.Game.Player.impl;
+using DnA.GMain.ObjMain.Entity.Api;
+using DnA.GMain.ObjMain.MovableEntity.Impl;
+using DnA.GMain.ObjMain.StillEntity.Impl;
 using DnA.Main.Events.Api;
 using DnA.Main.Extra;
+using DnA.ObjMain.StillEntity.Impl;
 using static DnA.Game.Player.impl.State;
 namespace DnA.Main.Events.Impl
 {
@@ -12,7 +18,7 @@ namespace DnA.Main.Events.Impl
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public IEvent HitPlatformEvent(Entity platform, Player player) => new Event(game =>
+        public IEvent HitPlatformEvent(IEntity platform, IPlayer player) => new Event(game =>
             {
                 if (player.GetBoundingBox().SideCollision(platform.GetPosition(), platform.GetBoundingBox().GetHeight(), platform.GetBoundingBox().GetWidth()))
                 {
@@ -32,7 +38,7 @@ namespace DnA.Main.Events.Impl
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public IEvent HitMovablePlatformEvent(MovablePlatform platform, Player player) => new Event(game =>
+        public IEvent HitMovablePlatformEvent(MovablePlatform platform, IPlayer player) => new Event(game =>
             {
                 player.SetVectorY(player.GetVector().GetY() + platform.GetVector().GetY());
                 if (player.GetVector().GetX() == 0 && platform.GetPreviousVector().GetX() != 0)
@@ -57,7 +63,7 @@ namespace DnA.Main.Events.Impl
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public IEvent HitButtonEvent(ActivableObjectImpl button, Player player) => new Event(game =>
+        public IEvent HitButtonEvent(ActivableObjectImpl button, IPlayer player) => new Event(game =>
             {
                 if (button.GetPlayer() == null)
                 {
@@ -78,7 +84,7 @@ namespace DnA.Main.Events.Impl
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public IEvent HitDoorEvent(Door door, Player player) => new Event(game =>
+        public IEvent HitDoorEvent(Door door, IPlayer player) => new Event(game =>
             {
                 if (door.GetPlayer() == null)
                 {
@@ -90,7 +96,7 @@ namespace DnA.Main.Events.Impl
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public IEvent HitLeverEvent(ActivableObjectImpl lever, Player player) => new Event(game =>
+        public IEvent HitLeverEvent(ActivableObjectImpl lever, IPlayer player) => new Event(game =>
             {
                 if (lever.GetPlayer() == null)
                 {
@@ -120,7 +126,7 @@ namespace DnA.Main.Events.Impl
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public IEvent HitBorderXEvent(Player player) => new Event(game =>
+        public IEvent HitBorderXEvent(IPlayer player) => new Event(game =>
             {
                 player.ResetY();
                 if (player.GetStateCopy()._stateX.Equals(StateEnum.STATE_JUMPING))
@@ -133,7 +139,7 @@ namespace DnA.Main.Events.Impl
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public IEvent HitBorderYEvent(Player player) => new Event(game =>
+        public IEvent HitBorderYEvent(IPlayer player) => new Event(game =>
             {
                 player.ResetX();
             });
