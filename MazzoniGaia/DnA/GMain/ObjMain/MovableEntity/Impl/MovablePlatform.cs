@@ -27,6 +27,11 @@ namespace DnA.GMain.ObjMain.MovableEntity.Impl
 
         public Vector2d GetPreviousVector() => _previousVector;
 
+        public void SetPreviousVector(Vector2d vector)
+        {
+            _previousVector = vector;
+        }
+
         public void SetFinalPosition(Position2d finalPosition)
         {
             _finalPosition = finalPosition;
