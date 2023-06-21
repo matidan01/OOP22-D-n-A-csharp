@@ -6,7 +6,7 @@ namespace DnA.Main.Extra
 {
     public class Player
     {
-        public static double STANDARDVELOCITY = 0.64;
+        public const double STANDARDVELOCITY = 0.64;
 
         public Player(Position2d pos, Vector2d vector2d, double height, double width, IPlayer.PlayerType type)
         {

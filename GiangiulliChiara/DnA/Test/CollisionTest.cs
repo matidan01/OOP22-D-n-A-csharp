@@ -13,14 +13,14 @@ public class CollisionTest
 {
     private const double X = 10;
     private const double Y = 20;
-    private static Position2d POS = new Position2d(X, Y);
+    private static readonly Position2d POS = new (X, Y);
     private const double HEIGHT = 4;
     private const double WIDTH = 4;
     private readonly IBoundingBox BOX = new RectBoundingBox(POS, HEIGHT, WIDTH);
     private const int GAMEHEIGHT = 400;
     private const int GAMEWIDTH = 400;
-    private readonly GameStateImpl GAME = new GameStateImpl(GAMEWIDTH, GAMEHEIGHT, new List<Entity>(), new List<Player>());
-    private readonly Player CHARACTER = new Player(POS, new Vector2d(0, 0), HEIGHT, WIDTH, PlayerType.ANGEL);
+    private readonly GameStateImpl GAME = new (GAMEWIDTH, GAMEHEIGHT, new List<Entity>(), new List<Player>());
+    private readonly Player CHARACTER = new (POS, new Vector2d(0, 0), HEIGHT, WIDTH, PlayerType.ANGEL);
 
     /// <summary>
     /// Test the collision between rectangular boxes.

@@ -3,7 +3,7 @@ namespace DnA.Main.Events.Api
 {
     public class EventQueue
     {
-        private Queue<IEvent> events;
+        private readonly Queue<IEvent> events;
 
         public EventQueue()
         {
