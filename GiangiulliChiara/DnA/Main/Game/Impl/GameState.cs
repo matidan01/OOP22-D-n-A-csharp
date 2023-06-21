@@ -5,27 +5,30 @@ using DnA.Main.Box.Impl;
 using DnA.Main.Events.Impl;
 using DnA.Main.Events.Api;
 using DnA.Main.Common;
-using static DnA.Main.Extra.Entity;
-using OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.StillEntity.Impl;
+using DnA.Game.Player.impl;
+using DnA.GMain.ObjMain.Entity.Api;
+using DnA.Game.Player.api;
+using DnA.ObjMain.StillEntity.Impl;
+using DnA.GMain.ObjMain.MovableEntity.Impl;
 
 namespace DnA.Main.Game.Impl
 {
     /// <summary>
     /// Represents the state of the game.
     /// </summary>
-    public class GameStateImpl : IGameState
+    public class GameState : IGameState
     {
         /// <summary>
         /// The constant value of the game's gravity.
         /// </summary>
         public const double GRAVITY = 0.8;
 
-        private List<Entity> entities;
-        private List<Player> characters;
-        private IBoundingBox boundingBox;
-        private IEventFactory eventFactory = new EventFactoryImpl();
-        private EventQueue eventQueue = new EventQueue();
-        private double score;
+        private readonly List<IEntity> _entities;
+        private readonly List<IPlayer> _characters;
+        private readonly IBoundingBox _boundingBox;
+        private readonly IEventFactory _eventFactory = new EventFactoryImpl();
+        private readonly EventQueue _eventQueue = new ();
+        private double _score;
 
         /// <summary>
         /// <see cref="GameStateImpl"/> constructor.
@@ -34,12 +37,12 @@ namespace DnA.Main.Game.Impl
         /// <param name="height">The height of the game.</param>
         /// <param name="entities">The entities of the game.</param>
         /// <param name="players">The players of the game.</param>
-        public GameStateImpl(int width, int height, List<Entity> entities, List<Player> players)
+        public GameState(int width, int height, List<IEntity> entities, List<IPlayer> players)
         {
-            this.boundingBox = new RectBoundingBox(new Position2d(0, 0), height, width);
-            this.entities = new List<Entity>(entities);
-            this.characters = new List<Player>(players);
-            this.score = 0;
+            _boundingBox = new RectBoundingBox(new Position2d(0, 0), height, width);
+            _entities = new List<IEntity>(entities);
+            _characters = new List<IPlayer>(players);
+            _score = 0;
         }
 
         /// <summary>
@@ -47,18 +50,18 @@ namespace DnA.Main.Game.Impl
         /// </summary>
         public void Update()
         {
-            characters.ForEach(c =>
+            _characters.ForEach(c =>
             {
                 Gravity(c);
                 CheckCollisions(c);
                 CheckBorders(c);
             });
 
-            eventQueue.ManageEvents(this);
+            _eventQueue.ManageEvents(this);
 
-            characters.ForEach(c => c.Update());
+            _characters.ForEach(c => c.Update());
 
-            entities
+            _entities
                 .OfType<MovablePlatform>()
                 .ToList()
                 .ForEach(entity => entity.MovablePlatformUpdate());
@@ -68,11 +71,11 @@ namespace DnA.Main.Game.Impl
         /// Manages the gravity of the player.
         /// </summary>
         /// <param name="player">The player to manage.</param>
-        private void Gravity(Player player)
+        private static void Gravity(IPlayer player)
         {
             if (player.GetVector().GetY() < GRAVITY)
             {
-                player.GetVector().SumY(Player.STANDARDVELOCITY);
+                player.GetVector().SumY(IPlayer.STANDARDVELOCITY);
             }
         }
 
@@ -82,43 +85,43 @@ namespace DnA.Main.Game.Impl
         /// <returns><inheritdoc/></returns>
         public IBoundingBox GetBoundingBox()
         {
-            return new RectBoundingBox(boundingBox.GetPosition(), boundingBox.GetHeight(), boundingBox.GetWidth());
+            return new RectBoundingBox(_boundingBox.GetPosition(), _boundingBox.GetHeight(), _boundingBox.GetWidth());
         }
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public void AddEntity(Entity e)
+        public void AddEntity(IEntity e)
         {
-            entities.Add(e);
+            _entities.Add(e);
         }
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public void RemoveEntity(Entity e)
+        public void RemoveEntity(IEntity e)
         {
-            entities.Remove(e);
+            _entities.Remove(e);
         }
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public List<Entity> GetEntities()
+        public List<IEntity> GetEntities()
         {
-            return new List<Entity>(entities);
+            return new List<IEntity>(_entities);
         }
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public List<Player> GetCharacters()
+        public List<IPlayer> GetCharacters()
         {
-            return new List<Player>(characters);
+            return new List<IPlayer>(_characters);
         }
 
         /// <summary>
@@ -127,17 +130,17 @@ namespace DnA.Main.Game.Impl
         /// <returns><inheritdoc/></returns>
         public double GetScore()
         {
-            return score;
+            return _score;
         }
 
         /// <summary>
         /// Manages when a character leaves an activable object or a door.
         /// </summary>
         /// <param name="character">The player to check.</param>
-        private void FreeObject(Player character)
+        private void FreeObject(IPlayer character)
         {
             var box = character.GetBoundingBox();
-            entities
+            _entities
                 .Where(e => !e.GetBoundingBox().IsCollidingWith(box.GetPosition(), box.GetHeight(), box.GetWidth()))
                 .ToList()
                 .ForEach(e =>
@@ -178,9 +181,9 @@ namespace DnA.Main.Game.Impl
         /// <returns>true if both doors are open.</returns>
         private bool CheckForEndGame()
         {
-            return entities
+            return _entities
                 .OfType<Door>()
-                .Where(entity => entity.GetDoorState() == Door.DoorState.OpenDoor)
+                .Where(entity => entity.GetDoorState() == Door.DoorState.OPEN_DOOR)
                 .Count() == 2;
         }
 
@@ -188,13 +191,13 @@ namespace DnA.Main.Game.Impl
         /// Checks the collision of a character with the entities in the game.
         /// </summary>
         /// <param name="character">The moving player.</param>
-        private void CheckCollisions(Player character)
+        private void CheckCollisions(IPlayer character)
         {
             var chPos = character.GetPosition().Sum(character.GetVector());
             var chHeight = character.GetBoundingBox().GetHeight();
             var chWidth = character.GetBoundingBox().GetWidth();
 
-            entities
+            _entities
                 .Where(e => e.GetBoundingBox().IsCollidingWith(chPos, chHeight, chWidth))
                 .ToList()
                 .ForEach(e =>
@@ -202,38 +205,38 @@ namespace DnA.Main.Game.Impl
                     switch (e.Type())
                     {
                         case EntityType.PLATFORM:
-                            eventQueue.AddEvent(eventFactory.HitPlatformEvent(e, character));
+                            _eventQueue.AddEvent(_eventFactory.HitPlatformEvent(e, character));
                             break;
                         case EntityType.MOVABLEPLATFORM:
-                            eventQueue.AddEvent(eventFactory.HitPlatformEvent(e, character));
-                            eventQueue.AddEvent(eventFactory.HitMovablePlatformEvent((MovablePlatform)e, character));
+                            _eventQueue.AddEvent(_eventFactory.HitPlatformEvent(e, character));
+                            _eventQueue.AddEvent(_eventFactory.HitMovablePlatformEvent((MovablePlatform)e, character));
                             break;
                         case EntityType.BUTTON:
-                            eventQueue.AddEvent(eventFactory.HitButtonEvent((ActivableObjectImpl)e, character));
+                            _eventQueue.AddEvent(_eventFactory.HitButtonEvent((ActivableObjectImpl)e, character));
                             break;
                         case EntityType.LEVER:
-                            eventQueue.AddEvent(eventFactory.HitLeverEvent((ActivableObjectImpl)e, character));
+                            _eventQueue.AddEvent(_eventFactory.HitLeverEvent((ActivableObjectImpl)e, character));
                             break;
                         case EntityType.ANGEL_DOOR:
                         case EntityType.DEVIL_DOOR:
-                            eventQueue.AddEvent(eventFactory.HitDoorEvent((Door)e, character));
+                            _eventQueue.AddEvent(_eventFactory.HitDoorEvent((Door)e, character));
                             if (CheckForEndGame())
                             {
-                                eventQueue.ClearQueue();
-                                eventQueue.AddEvent(eventFactory.VictoryEvent());
+                                _eventQueue.ClearQueue();
+                                _eventQueue.AddEvent(_eventFactory.VictoryEvent());
                             }
                             break;
                         case EntityType.DIAMOND:
-                            eventQueue.AddEvent(eventFactory.HitDiamondEvent((Diamond)e));
-                            score += ((Diamond)e).GetValue();
+                            _eventQueue.AddEvent(_eventFactory.HitDiamondEvent((Diamond)e));
+                            _score += ((Diamond)e).GetValue();
                             break;
                         case EntityType.RED_PUDDLE:
                         case EntityType.BLUE_PUDDLE:
                         case EntityType.PURPLE_PUDDLE:
-                            eventQueue.AddEvent(eventFactory.HitPlatformEvent(e, character));
+                            _eventQueue.AddEvent(_eventFactory.HitPlatformEvent(e, character));
                             if (((Puddle)e).KillPlayer(character))
                             {
-                                eventQueue.AddEvent(eventFactory.GameOverEvent());
+                                _eventQueue.AddEvent(_eventFactory.GameOverEvent());
                             }
                             break;
                         default:
@@ -252,8 +255,8 @@ namespace DnA.Main.Game.Impl
         /// <returns>true if the character is colliding with a vertical border.</returns>
         public bool CheckVerticalBorders(double pos, double length)
         {
-            var sxBorder = boundingBox.GetPosition().GetX();
-            var dxBorder = boundingBox.GetPosition().GetX() + boundingBox.GetWidth();
+            var sxBorder = _boundingBox.GetPosition().GetX();
+            var dxBorder = _boundingBox.GetPosition().GetX() + _boundingBox.GetWidth();
 
             return pos <= sxBorder || pos + length >= dxBorder;
         }
@@ -266,8 +269,8 @@ namespace DnA.Main.Game.Impl
         /// <returns>true if the character is colliding with a horizontal border.</returns>
         public bool CheckHorizontalBorders(double pos, double height)
         {
-            var northBorder = boundingBox.GetPosition().GetY();
-            var southBorder = boundingBox.GetPosition().GetY() + boundingBox.GetHeight();
+            var northBorder = _boundingBox.GetPosition().GetY();
+            var southBorder = _boundingBox.GetPosition().GetY() + _boundingBox.GetHeight();
 
             return pos <= northBorder || pos + height >= southBorder;
         }
@@ -276,7 +279,7 @@ namespace DnA.Main.Game.Impl
         /// Checks the collision of a character with the borders.
         /// </summary>
         /// <param name="character">The moving player.</param>
-        private void CheckBorders(Player character)
+        private void CheckBorders(IPlayer character)
         {
             var chPos = character.GetPosition().Sum(character.GetVector());
             var chHeight = character.GetBoundingBox().GetHeight();
@@ -284,11 +287,11 @@ namespace DnA.Main.Game.Impl
 
             if (CheckVerticalBorders(chPos.GetX(), chLength))
             {
-                eventQueue.AddEvent(eventFactory.HitBorderYEvent(character));
+                _eventQueue.AddEvent(_eventFactory.HitBorderYEvent(character));
             }
             if (CheckHorizontalBorders(chPos.GetY(), chHeight))
             {
-                eventQueue.AddEvent(eventFactory.HitBorderXEvent(character));
+                _eventQueue.AddEvent(_eventFactory.HitBorderXEvent(character));
             }
         }
     }

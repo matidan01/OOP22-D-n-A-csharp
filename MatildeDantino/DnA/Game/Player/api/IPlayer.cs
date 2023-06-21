@@ -1,6 +1,9 @@
-using DnA.Game.MovableEntity.Api;
+using DnA.Game.Player.impl;
+using DnA.GMain.ObjMain.MovableEntity.Api;
 
-namespace DnA.Game.Player.api {
+
+namespace DnA.Game.Player.api
+{
 
     ///
     /// An interface representing the Game Character.

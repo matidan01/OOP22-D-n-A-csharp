@@ -4,7 +4,7 @@ namespace DnA.Main.Events.Impl
 {
     public class Event : IEvent
     {
-        private Action<IGameState> _manageAction;
+        private readonly Action<IGameState> _manageAction;
 
         public Event(Action<IGameState> manageAction) => _manageAction = manageAction;
 

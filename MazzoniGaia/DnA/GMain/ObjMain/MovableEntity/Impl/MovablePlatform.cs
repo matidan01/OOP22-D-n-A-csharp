@@ -1,13 +1,13 @@
 
-
-using DnA.Game.Entity.api;
 using DnA.Game.Player.impl;
 using DnA.Main.Common;
+using DnA.GMain.ObjMain.Entity.Api;
 
-namespace DnA.Game.Entity.MovableEntity.impl{
-    public class MovablePlatform : AbstractMovableEntity 
+namespace DnA.GMain.ObjMain.MovableEntity.Impl
+{
+    public class MovablePlatform : AbstractMovableEntity
     {
-        private Position2d _originalPosition;
+        private readonly Position2d _originalPosition;
         private Position2d _finalPosition;
         private Position2d _lastPosition;
         private Vector2d _previousVector;
@@ -22,6 +22,20 @@ namespace DnA.Game.Entity.MovableEntity.impl{
         public Position2d GetOriginalPosition() => _originalPosition;
 
         public Position2d GetFinalPosition() => _finalPosition;
+
+        public Position2d GetLastPosition() => _lastPosition;
+
+        public Vector2d GetPreviousVector() => _previousVector;
+
+        public void SetPreviousVector(Vector2d vector)
+        {
+            _previousVector = vector;
+        }
+
+        public void SetFinalPosition(Position2d finalPosition)
+        {
+            _finalPosition = finalPosition;
+        }
 
         public void SetLastPosition()
         {
@@ -44,7 +58,7 @@ namespace DnA.Game.Entity.MovableEntity.impl{
             }
             if (position1.GetY != position2.GetY)
             {
-                y = position2.IsAbove(position1) ? -0.5 : +0.5; 
+                y = position2.IsAbove(position1) ? -0.5 : +0.5;
             }
             SetVector(new Vector2d(x, y));
         }
@@ -65,11 +79,11 @@ namespace DnA.Game.Entity.MovableEntity.impl{
         /// <returns> false if the platform has gone out of range. </returns>
         public bool IsBetweenRange()
         {
-            double maxX = Math.Max(_originalPosition.GetX() , _finalPosition.GetX());
-            double minX =  Math.Min(_originalPosition.GetX(), _finalPosition.GetX());
+            double maxX = Math.Max(_originalPosition.GetX(), _finalPosition.GetX());
+            double minX = Math.Min(_originalPosition.GetX(), _finalPosition.GetX());
             double maxY = Math.Max(_originalPosition.GetY(), _finalPosition.GetY());
             double minY = Math.Min(_originalPosition.GetY(), _finalPosition.GetY());
-            return GetPosition().GetX() >= minX && GetPosition().GetX() <= maxX 
+            return GetPosition().GetX() >= minX && GetPosition().GetX() <= maxX
             && GetPosition().GetY() <= maxY && GetPosition().GetY() >= minY;
         }
 

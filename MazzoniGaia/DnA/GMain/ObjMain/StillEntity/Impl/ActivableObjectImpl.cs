@@ -1,25 +1,28 @@
 
-
-using DnA.Game.enitity.StillEntity.api;
-using DnA.Game.Entity.MovableEntity.impl;
 using DnA.Game.Player.api;
 using DnA.Game.Player.impl;
 using DnA.Main.Common;
-using static DnA.Game.Entity.api.IEntity;
+using DnA.GMain.ObjMain.MovableEntity.Impl;
+using DnA.GMain.ObjMain.StillEntity.Api;
+using static DnA.GMain.ObjMain.Entity.Api.IEntity;
 
-/// <summary>
-/// An ActivableObject that moves its platform when activated by the player.
-/// It can be either a Lever or a Button.
-/// The Lever moves the {@link MovablePlatform} when it is touched by the player.
-/// The Button moves the {@link MovablePlatform} while it is being touched by the player.
-/// </summary>
-namespace DnA.Game.Entity.StillEntity.impl{
+namespace DnA.GMain.ObjMain.StillEntity.Impl
+{
+
+    /// <summary>
+    /// An ActivableObject that moves its platform when activated by the player.
+    /// It can be either a Lever or a Button.
+    /// The Lever moves the {@link MovablePlatform} when it is touched by the player.
+    /// The Button moves the {@link MovablePlatform} while it is being touched by the player.
+    /// </summary>
+
+
     public class ActivableObjectImpl : AbstractEntity, IActivableObject
     {
         private bool _isActive;
         private IPlayer? _player;
         private readonly MovablePlatform _movablePlatform;
-        
+
         public ActivableObjectImpl(Position2d pos, double height, double width, MovablePlatform movablePlatform, EntityType type)
         : base(pos, height, width, type)
         {

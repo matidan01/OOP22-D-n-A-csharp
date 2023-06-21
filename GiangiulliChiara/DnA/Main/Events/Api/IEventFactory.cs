@@ -1,5 +1,9 @@
+using DnA.Game.Player.api;
+using DnA.GMain.ObjMain.Entity.Api;
+using DnA.GMain.ObjMain.MovableEntity.Impl;
+using DnA.GMain.ObjMain.StillEntity.Impl;
 using DnA.Main.Extra;
-using OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.StillEntity.Impl;
+using DnA.ObjMain.StillEntity.Impl;
 
 namespace DnA.Main.Events.Api
 {
@@ -14,7 +18,7 @@ namespace DnA.Main.Events.Api
     /// <param name="platform">The hit platform.</param>
     /// <param name="player">The player.</param>
     /// <returns>The new event.</returns>
-    IEvent HitPlatformEvent(Entity platform, Player player);
+    IEvent HitPlatformEvent(IEntity platform, IPlayer player);
 
     /// <summary>
     /// Models the collision event with a movable platform.
@@ -22,21 +26,21 @@ namespace DnA.Main.Events.Api
     /// <param name="movablePlatform">The hit movable platform.</param>
     /// <param name="player">The player.</param>
     /// <returns>The new event.</returns>
-    IEvent HitMovablePlatformEvent(MovablePlatform movablePlatform, Player player);
+    IEvent HitMovablePlatformEvent(MovablePlatform movablePlatform, IPlayer player);
 
     /// <summary>
     /// Models the collision event with the horizontal borders.
     /// </summary>
     /// <param name="player">The player.</param>
     /// <returns>The new event.</returns>
-    IEvent HitBorderXEvent(Player player);
+    IEvent HitBorderXEvent(IPlayer player);
 
     /// <summary>
     /// Models the collision event with the vertical borders.
     /// </summary>
     /// <param name="player">The player.</param>
     /// <returns>The new event.</returns>
-    IEvent HitBorderYEvent(Player player);
+    IEvent HitBorderYEvent(IPlayer player);
 
     /// <summary>
     /// Models the collision event with a button.
@@ -44,7 +48,7 @@ namespace DnA.Main.Events.Api
     /// <param name="button">The hit button.</param>
     /// <param name="player">The player.</param>
     /// <returns>The new event.</returns>
-    IEvent HitButtonEvent(ActivableObjectImpl button, Player player);
+    IEvent HitButtonEvent(ActivableObjectImpl button, IPlayer player);
 
     /// <summary>
     /// Models the collision event with a door.
@@ -52,7 +56,7 @@ namespace DnA.Main.Events.Api
     /// <param name="door">The hit door.</param>
     /// <param name="player">The player.</param>
     /// <returns>The new event.</returns>
-    IEvent HitDoorEvent(Door door, Player player);
+    IEvent HitDoorEvent(Door door, IPlayer player);
 
     /// <summary>
     /// Models the collision event with a lever.
@@ -60,7 +64,7 @@ namespace DnA.Main.Events.Api
     /// <param name="lever">The hit lever.</param>
     /// <param name="player">The player.</param>
     /// <returns>The new event.</returns>
-    IEvent HitLeverEvent(ActivableObjectImpl lever, Player player);
+    IEvent HitLeverEvent(ActivableObjectImpl lever, IPlayer player);
 
     /// <summary>
     /// Models the collision event with a diamond.

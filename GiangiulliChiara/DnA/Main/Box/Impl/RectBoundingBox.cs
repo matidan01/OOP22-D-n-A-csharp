@@ -8,9 +8,9 @@ namespace DnA.Main.Box.Impl
     /// </summary>
     public class RectBoundingBox : IBoundingBox
     {
-        private Position2d _position;
-        private double _height;
-        private double _width;
+        private readonly Position2d _position;
+        private readonly double _height;
+        private readonly double _width;
 
         public RectBoundingBox(Position2d p, double h, double w) {
             _position = p;

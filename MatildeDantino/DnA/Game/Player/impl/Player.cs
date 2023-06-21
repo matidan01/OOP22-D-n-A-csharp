@@ -1,8 +1,10 @@
 using DnA.Main.Common;
 using DnA.Game.Player.api;
-using DnA.Game.Entity.api;
+using DnA.GMain.ObjMain.Entity.Api;
 
-namespace DnA.Game.Player.impl {
+
+namespace DnA.Game.Player.impl
+{
     /// <summary>
     /// IPlayer implementation.
     /// </summary>

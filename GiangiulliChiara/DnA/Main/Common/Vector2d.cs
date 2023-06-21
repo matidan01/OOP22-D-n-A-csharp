@@ -63,11 +63,11 @@ namespace DnA.Main.Common
         /// <returns>true if the specified object is equal to the current Vector2d object; otherwise, false.</returns>
         public override bool Equals(object? obj)
         {
-            if (!(obj is Vector2d))
+            if (obj is not Vector2d)
             {
                 return false;
             }
-            Vector2d vec = (Vector2d)obj;
+            Vector2d vec = (Vector2d) obj;
             return Double.Equals(vec._x, _x) && Double.Equals(vec._y, _y);
         }
 

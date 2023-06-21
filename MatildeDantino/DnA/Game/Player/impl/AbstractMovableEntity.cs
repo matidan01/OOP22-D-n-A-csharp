@@ -1,11 +1,14 @@
-using DnA.Game.Entity.api;
 using DnA.Main.Common;
-using DnA.Game.MovableEntity.Api;
+using DnA.GMain.ObjMain.Entity.Api;
+using DnA.GMain.ObjMain.MovableEntity.Api;
+
+
 
 /// <summary>
 /// Abstract class that implements the <see cref="MovableEntity"/> interface.
 /// </summary>
-namespace DnA.Game.Player.impl {
+namespace DnA.Game.Player.impl
+{
     public abstract class AbstractMovableEntity : AbstractEntity, IMovableEntity
     {
             private Vector2d _vector;

@@ -1,7 +1,9 @@
-
+using DnA.Main.Box.Api;
+using DnA.Main.Box.Impl;
 using DnA.Main.Common;
 
-namespace DnA.Game.Entity.api{
+namespace DnA.GMain.ObjMain.Entity.Api
+{
     public interface IEntity
     {
         /// <summary>
@@ -54,7 +56,7 @@ namespace DnA.Game.Entity.api{
             /// </summary>
             DIAMOND
         }
-    
+
         /// <summary>
         /// Returns the position of the entity.
         /// </summary>
@@ -84,7 +86,11 @@ namespace DnA.Game.Entity.api{
         /// </summary>
         /// <returns>The type of the entity. </returns>
         EntityType GetType();
-    
-    }
 
+        /// <summary>
+        /// </summary>
+        /// <returns> Return the bounding box of the entity</returns>
+        IBoundingBox GetBoundingBox();
+
+    }
 }

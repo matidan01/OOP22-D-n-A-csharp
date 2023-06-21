@@ -34,7 +34,7 @@ namespace DnA.Main.Common
     /// Moves the position by adding a 2-dimensional vector.
     /// <param name="vector">the 2-dimensional vector>
     /// <returns>true the new position
-    public Position2d Sum(Vector2d vector) => new Position2d(_x + vector.GetX(), _y + vector.GetY());
+    public Position2d Sum(Vector2d vector) => new (_x + vector.GetX(), _y + vector.GetY());
 
     /// <summary>
     /// <inheritdoc/>
@@ -59,9 +59,9 @@ namespace DnA.Main.Common
     /// <summary>
     /// <inheritdoc/>
     /// </summary>    
-    public bool equals(object obj) 
+    public override bool Equals(object? obj) 
     {
-        if (!(obj is Position2d)) {
+        if (obj is not Position2d) {
             return false;
         }
         Position2d pos = (Position2d) obj;
@@ -72,7 +72,7 @@ namespace DnA.Main.Common
     /// <summary>
     /// <inheritdoc/>
     /// </summary>
-    public int hashCode() 
+    public override int GetHashCode() 
     {
         int prime = 31;
         int result = 1;
