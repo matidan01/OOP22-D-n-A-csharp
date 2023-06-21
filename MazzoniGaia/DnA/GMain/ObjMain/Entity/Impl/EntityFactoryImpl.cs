@@ -16,7 +16,7 @@ namespace DnA.ObjMain.Entity.Impl
         /// <summary>
         /// A constant for the value of the diamond.
         /// </summary>
-        private const double DIAMOND_VALUE = 1;
+        //private const double DIAMOND_VALUE = 1;
         private readonly Vector2d defaultVector = new (0, 0);
 
         /// <inheritdoc/>
