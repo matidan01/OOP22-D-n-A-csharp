@@ -1,32 +1,31 @@
-using DnA.Game.Common;
+using DnA.Main.Common;
 using DnA.Game.Player.api;
 using DnA.Game.Player.impl;
 using DnA.Game.Command.api;
 using DnA.Game.Command.impl;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace DnATest;
 
-[TestClass]
+[TestFixture]
 public class MovementTest
 {
-    private static readonly Position2d START_POSITION = new Position2d(0, 0);
-    private static readonly Vector2d START_VECTOR = new Vector2d(1, 0);
+    private static readonly Position2d START_POSITION = new(0, 0);
+    private static readonly Vector2d START_VECTOR = new(1, 0);
     private const double HEIGHT = 10.0;
     private const double WIDTH = 10.0;
     private const IPlayer.PlayerType TYPE = IPlayer.PlayerType.ANGEL;
-    private readonly Player _player = new Player(START_POSITION, START_VECTOR, HEIGHT, WIDTH, TYPE);
+    private readonly Player _player = new(START_POSITION, START_VECTOR, HEIGHT, WIDTH, TYPE);
 
-    [TestMethod]
+    [Test]
     public void TestPlayerUpdate()
     {   
-        ICommandFactory _command = new CommandFactory(_player);
         Position2d expectedPosition = new Position2d(0, 0).Sum(START_VECTOR);
         _player.Update();
         Assert.AreEqual(expectedPosition, _player.GetPosition());
     }
 
-    [TestMethod]
+    [Test]
     public void TestCommand()
     {
         // Test the "right" command
