@@ -2,11 +2,11 @@
 using DnA.Game.Player.api;
 using DnA.Game.Player.impl;
 using DnA.Main.Common;
-using OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.MovableEntity.Impl;
-using OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.StillEntity.Api;
-using static OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.Entity.Api.IEntity;
+using DnA.GMain.ObjMain.MovableEntity.Impl;
+using DnA.GMain.ObjMain.StillEntity.Api;
+using static DnA.GMain.ObjMain.Entity.Api.IEntity;
 
-namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.StillEntity.Impl
+namespace DnA.GMain.ObjMain.StillEntity.Impl
 {
 
     /// <summary>

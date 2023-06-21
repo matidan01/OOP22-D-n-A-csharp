@@ -1,8 +1,6 @@
-using DnA.Game.Entity.api;
 using DnA.Main.Common;
-using DnA.Game.MovableEntity.Api;
-using OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.Entity.Api;
-using OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.MovableEntity.Api;
+using DnA.GMain.ObjMain.Entity.Api;
+using DnA.GMain.ObjMain.MovableEntity.Api;
 
 
 

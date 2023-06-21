@@ -1,9 +1,9 @@
 using DnA.Game.Player.api;
 using DnA.Game.Player.impl;
 using DnA.Main.Common;
-using static OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.Entity.Api.IEntity;
+using static DnA.GMain.ObjMain.Entity.Api.IEntity;
 
-namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.StillEntity.Impl
+namespace DnA.ObjMain.StillEntity.Impl
 {
     /// <summary>
     /// A puddle with the following characteristics:

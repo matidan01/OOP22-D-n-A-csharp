@@ -1,11 +1,11 @@
 
 
-using DnA.Game.Player.api;
-using DnA.Game.Player.impl;
 using DnA.Main.Common;
-using OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.Entity.Api;
+using DnA.GMain.ObjMain.Entity.Api;
+using DnA.Game.Player.impl;
+using DnA.Game.Player.api;
 
-namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.StillEntity.Impl
+namespace DnA.ObjMain.StillEntity.Impl
 {
     /// <summary>
     /// A door that can be opened only by the corresponding player.

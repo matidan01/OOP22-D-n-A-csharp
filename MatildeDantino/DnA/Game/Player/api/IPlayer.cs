@@ -1,5 +1,5 @@
-using DnA.Game.MovableEntity.Api;
-using OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.MovableEntity.Api;
+using DnA.Game.Player.impl;
+using DnA.GMain.ObjMain.MovableEntity.Api;
 
 
 namespace DnA.Game.Player.api

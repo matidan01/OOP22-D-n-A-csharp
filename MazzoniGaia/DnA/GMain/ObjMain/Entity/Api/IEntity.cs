@@ -1,6 +1,6 @@
 using DnA.Main.Common;
 
-namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.Entity.Api
+namespace DnA.GMain.ObjMain.Entity.Api
 {
     public interface IEntity
     {

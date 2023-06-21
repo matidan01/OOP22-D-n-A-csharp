@@ -1,6 +1,6 @@
-using OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.Entity.Api;
+using DnA.GMain.ObjMain.Entity.Api;
 
-namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.StillEntity.Api
+namespace DnA.GMain.ObjMain.StillEntity.Api
 {
     /// <summery>
     /// A class that allows some Entities to be activated.

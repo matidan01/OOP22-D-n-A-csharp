@@ -1,8 +1,8 @@
 
 using DnA.Main.Common;
-using OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.MovableEntity.Impl;
+using DnA.GMain.ObjMain.MovableEntity.Impl;
 
-namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.Entity.Api
+namespace DnA.GMain.ObjMain.Entity.Api
 {
     /// <summary>
     ///  A factory with the purpose of being able to create various types of entities.

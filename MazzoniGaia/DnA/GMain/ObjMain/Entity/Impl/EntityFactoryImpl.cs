@@ -1,12 +1,12 @@
 
 using DnA.Main.Common;
-using OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.Entity.Api;
-using OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.MovableEntity.Impl;
-using OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.StillEntity.Impl;
-using OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.StillEntity.Impl;
-using static OOP22_D_n_A_csharp.MazzoniGaia.DnA.GMain.ObjMain.Entity.Api.IEntity;
+using DnA.GMain.ObjMain.Entity.Api;
+using DnA.GMain.ObjMain.MovableEntity.Impl;
+using DnA.GMain.ObjMain.StillEntity.Impl;
+using DnA.ObjMain.StillEntity.Impl;
+using static DnA.GMain.ObjMain.Entity.Api.IEntity;
 
-namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.Entity.Impl
+namespace DnA.ObjMain.Entity.Impl
 {
     /// <summary>
     /// A class that implements the <see cref="IEntityFactory"/> interface's createEntity method.
@@ -32,8 +32,8 @@ namespace OOP22_D_n_A_csharp.MazzoniGaia.DnA.ObjMain.Entity.Impl
                 EntityType.ANGEL_DOOR => new Door(position[0], IEntityFactory.DOOR_HEIGHT, IEntityFactory.DOOR_WIDTH, EntityType.ANGEL_DOOR),
                 EntityType.DEVIL_DOOR => new Door(position[0], IEntityFactory.DOOR_HEIGHT, IEntityFactory.DOOR_WIDTH, EntityType.DEVIL_DOOR),
                 EntityType.PLATFORM => new Platform(position[0], IEntityFactory.DEF_HEIGHT, IEntityFactory.PLATFORM_WIDTH),
-                EntityType.MOVABLEPLATFORM => new MovablePlatform(position[0], defaultVector, (double) IEntityFactory.DEF_HEIGHT, (double) IEntityFactory.PLATFORM_WIDTH, position[1]),
-                EntityType.DIAMOND => new Diamond((double) IEntityFactory.DIAMOND_HEIGHT, (double) IEntityFactory.DIAMOND_WIDTH, DIAMOND_VALUE, position[0]),
+                EntityType.MOVABLEPLATFORM => new MovablePlatform(position[0], defaultVector, IEntityFactory.DEF_HEIGHT, IEntityFactory.PLATFORM_WIDTH, EntityType.MOVABLEPLATFORM, position[1]),
+                //EntityType.DIAMOND => new Main.Extra.Diamond((double) IEntityFactory.DIAMOND_HEIGHT, (double) IEntityFactory.DIAMOND_WIDTH, DIAMOND_VALUE, position[0]),
                 _ => throw new ArgumentException()
             };
         }
