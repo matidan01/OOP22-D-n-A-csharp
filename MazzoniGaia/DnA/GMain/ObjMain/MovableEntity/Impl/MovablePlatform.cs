@@ -23,6 +23,10 @@ namespace DnA.GMain.ObjMain.MovableEntity.Impl
 
         public Position2d GetFinalPosition() => _finalPosition;
 
+        public Position2d GetLastPosition() => _lastPosition;
+
+        public Vector2d GetPreviousVector() => _previousVector;
+
         public void SetLastPosition()
         {
             _lastPosition = GetPosition();
