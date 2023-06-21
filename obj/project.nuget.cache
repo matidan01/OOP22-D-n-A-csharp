@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "RvHRSy8EiccbwQgmWyhoiOPSFqvBpDJOl1ufP+WsvsVPbQT6uj6tA/C7QxLGvmEEaPMfesq6OZKA3jk3v0ujhw==",
+  "dgSpecHash": "JqhUT5vcp4RXVVsvYkNC4/C4mCtYgjL3sjN+/YyQRLqsVJ8kLmKX7F/ZXqlxiJ7XdecVCeqEkfxuHKsOWz4hyQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\chiar\\Desktop\\Chiara\\uni\\secondo_anno\\programmazione_ad_oggetti\\progetto\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
+  "projectFilePath": "C:\\Users\\gaiam\\OneDrive\\Desktop\\PROGRAMMAZIONE_AD_OGGETTI\\D-n-A\\Csharp\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\chiar\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\chiar\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
-    "C:\\Users\\chiar\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512"
+    "C:\\Users\\gaiam\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\gaiam\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\gaiam\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512"
   ],
   "logs": []
 }

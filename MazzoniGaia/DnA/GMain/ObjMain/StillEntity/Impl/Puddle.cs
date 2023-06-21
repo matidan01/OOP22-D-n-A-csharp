@@ -29,18 +29,18 @@ namespace DnA.ObjMain.StillEntity.Impl
         /// </summary>
         /// <param name="character">The Player touching the puddle.</param>
         /// <returns>True if there should be a game over, otherwise returns False.</returns>
-        public bool KillPlayer(Player character)
+        public bool KillPlayer(IPlayer character)
         {
             switch (_type)
             {
                 case EntityType.PURPLE_PUDDLE:
                     return true;
                 case EntityType.BLUE_PUDDLE:
-                    if (character._type.Equals(IPlayer.PlayerType.DEVIL))
+                    if (character.GetType().Equals(IPlayer.PlayerType.DEVIL))
                         return true;
                     break;
                 case EntityType.RED_PUDDLE:
-                    if (character._type.Equals(IPlayer.PlayerType.ANGEL))
+                    if (character.GetType().Equals(IPlayer.PlayerType.ANGEL))
                         return true;
                     break;
                 default:

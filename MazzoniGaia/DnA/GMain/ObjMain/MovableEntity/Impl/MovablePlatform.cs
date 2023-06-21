@@ -8,7 +8,7 @@ namespace DnA.GMain.ObjMain.MovableEntity.Impl
     public class MovablePlatform : AbstractMovableEntity
     {
         private readonly Position2d _originalPosition;
-        private readonly Position2d _finalPosition;
+        private Position2d _finalPosition;
         private Position2d _lastPosition;
         private Vector2d _previousVector;
         public MovablePlatform(Position2d position, Vector2d vector, double height, double width, IEntity.EntityType type, Position2d fPosition) : base(position, vector, height, width, type)
@@ -26,6 +26,11 @@ namespace DnA.GMain.ObjMain.MovableEntity.Impl
         public Position2d GetLastPosition() => _lastPosition;
 
         public Vector2d GetPreviousVector() => _previousVector;
+
+        public void SetFinalPosition(Position2d finalPosition)
+        {
+            _finalPosition = finalPosition;
+        }
 
         public void SetLastPosition()
         {
