@@ -1,3 +1,5 @@
+using DnA.Main.Box.Api;
+using DnA.Main.Box.Impl;
 using DnA.Main.Common;
 
 namespace DnA.GMain.ObjMain.Entity.Api
@@ -84,6 +86,11 @@ namespace DnA.GMain.ObjMain.Entity.Api
         /// </summary>
         /// <returns>The type of the entity. </returns>
         EntityType GetType();
+
+        /// <summary>
+        /// </summary>
+        /// <returns> Return the bounding box of the entity</returns>
+        IBoundingBox GetBoundingBox();
 
     }
 }
