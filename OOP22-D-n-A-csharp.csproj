@@ -12,4 +12,8 @@
     <PackageReference Include="nunit" Version="3.13.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="OOP22-D-n-A-csharp.csproj" />
+  </ItemGroup>
+
 </Project>

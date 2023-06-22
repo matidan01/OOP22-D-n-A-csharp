@@ -3,3 +3,8 @@ C:\Users\Utente\Desktop\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.G
 C:\Users\Utente\Desktop\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.AssemblyInfoInputs.cache
 C:\Users\Utente\Desktop\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.AssemblyInfo.cs
 C:\Users\Utente\Desktop\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.csproj.CoreCompileInputs.cache
+C:\Users\emili\OneDrive\Desktop\uni\oop\progetto\c#\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.csproj.AssemblyReference.cache
+C:\Users\emili\OneDrive\Desktop\uni\oop\progetto\c#\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emili\OneDrive\Desktop\uni\oop\progetto\c#\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.AssemblyInfoInputs.cache
+C:\Users\emili\OneDrive\Desktop\uni\oop\progetto\c#\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.AssemblyInfo.cs
+C:\Users\emili\OneDrive\Desktop\uni\oop\progetto\c#\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.csproj.CoreCompileInputs.cache

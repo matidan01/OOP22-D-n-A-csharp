@@ -224,19 +224,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Utente\\.nuget\\packages\\": {}
+    "C:\\Users\\emili\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Utente\\Desktop\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
+      "projectUniqueName": "C:\\Users\\emili\\OneDrive\\Desktop\\uni\\oop\\progetto\\c#\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
       "projectName": "OOP22-D-n-A-csharp",
-      "projectPath": "C:\\Users\\Utente\\Desktop\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
-      "packagesPath": "C:\\Users\\Utente\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Utente\\Desktop\\OOP22-D-n-A-csharp\\obj\\",
+      "projectPath": "C:\\Users\\emili\\OneDrive\\Desktop\\uni\\oop\\progetto\\c#\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
+      "packagesPath": "C:\\Users\\emili\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\emili\\OneDrive\\Desktop\\uni\\oop\\progetto\\c#\\OOP22-D-n-A-csharp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Utente\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\emili\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
