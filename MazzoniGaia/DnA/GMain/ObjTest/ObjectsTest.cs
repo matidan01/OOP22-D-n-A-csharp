@@ -6,11 +6,11 @@ using DnA.GMain.ObjMain.StillEntity.Impl;
 using DnA.Main.Common;
 using DnA.ObjMain.Entity.Impl;
 using DnA.ObjMain.StillEntity.Impl;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace it.unibo.dna
 {
-    [TestFixture]
+    [TestClass]
     public class ObjectsTest
     {
         private static readonly EntityFactoryImpl ENTITYFACTORY = new ();
@@ -30,7 +30,7 @@ namespace it.unibo.dna
         private static readonly IEntity DEVILDOOR = ENTITYFACTORY.CreateEntity(null, IEntity.EntityType.DEVIL_DOOR, POS2);
         private static readonly IEntity RED_PUDDLE = ENTITYFACTORY.CreateEntity(null, IEntity.EntityType.RED_PUDDLE, POS3);
 
-        [Test]
+        [TestMethod]
         public void TestMovablePlatformMethods()
         {
             Position2d finalPos = new (X + 100, Y + 100); // test vector 0.5, 0.5
@@ -59,7 +59,7 @@ namespace it.unibo.dna
             Assert.AreEqual(PLATFORM.GetPosition(), PLATFORM.GetFinalPosition());
         }
 
-        [Test]
+        [TestMethod]
         public void TestDoor()
         {
             Assert.AreEqual(((Door)ANGELDOOR).GetDoorState(), Door.DoorState.CLOSED_DOOR);
@@ -70,7 +70,7 @@ namespace it.unibo.dna
             Assert.AreEqual(((Door)DEVILDOOR).GetDoorState(), Door.DoorState.OPEN_DOOR);
         }
 
-        [Test]
+        [TestMethod]
         public void TestActivableObject()
         {
             ((ActivableObjectImpl)BUTTON).Activate();
@@ -81,7 +81,7 @@ namespace it.unibo.dna
             Assert.AreEqual(((ActivableObjectImpl)LEVER).GetMovablePlatform()?.GetPosition(), PLATFORM.GetOriginalPosition());
         }
 
-        [Test]
+        [TestMethod]
         public void TestPuddles()
         {
             Assert.IsTrue(((Puddle)RED_PUDDLE).KillPlayer(ANGEL));

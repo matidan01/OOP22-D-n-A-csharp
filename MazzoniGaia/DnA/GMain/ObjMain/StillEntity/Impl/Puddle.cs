@@ -1,5 +1,6 @@
 using DnA.Game.Player.api;
 using DnA.Game.Player.impl;
+using DnA.GMain.ObjMain.Entity.Api;
 using DnA.Main.Common;
 using static DnA.GMain.ObjMain.Entity.Api.IEntity;
 
