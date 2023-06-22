@@ -3,8 +3,16 @@ C:\Users\Utente\Desktop\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.G
 C:\Users\Utente\Desktop\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.AssemblyInfoInputs.cache
 C:\Users\Utente\Desktop\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.AssemblyInfo.cs
 C:\Users\Utente\Desktop\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.csproj.CoreCompileInputs.cache
+<<<<<<< HEAD
 c:\Users\gaiam\OneDrive\Desktop\PROGRAMMAZIONE_AD_OGGETTI\D-n-A\Csharp\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.csproj.AssemblyReference.cache
 c:\Users\gaiam\OneDrive\Desktop\PROGRAMMAZIONE_AD_OGGETTI\D-n-A\Csharp\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.GeneratedMSBuildEditorConfig.editorconfig
 c:\Users\gaiam\OneDrive\Desktop\PROGRAMMAZIONE_AD_OGGETTI\D-n-A\Csharp\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.AssemblyInfoInputs.cache
 c:\Users\gaiam\OneDrive\Desktop\PROGRAMMAZIONE_AD_OGGETTI\D-n-A\Csharp\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.AssemblyInfo.cs
 c:\Users\gaiam\OneDrive\Desktop\PROGRAMMAZIONE_AD_OGGETTI\D-n-A\Csharp\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.csproj.CoreCompileInputs.cache
+=======
+C:\Users\emili\OneDrive\Desktop\uni\oop\progetto\c#\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.csproj.AssemblyReference.cache
+C:\Users\emili\OneDrive\Desktop\uni\oop\progetto\c#\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emili\OneDrive\Desktop\uni\oop\progetto\c#\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.AssemblyInfoInputs.cache
+C:\Users\emili\OneDrive\Desktop\uni\oop\progetto\c#\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.AssemblyInfo.cs
+C:\Users\emili\OneDrive\Desktop\uni\oop\progetto\c#\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.csproj.CoreCompileInputs.cache
+>>>>>>> b5b7651d1c98d8e72dee5892e91cefa0f6364890

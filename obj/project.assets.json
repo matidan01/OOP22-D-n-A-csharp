@@ -258,11 +258,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\gaiam\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\emili\\.nuget\\packages\\": {}
+>>>>>>> b5b7651d1c98d8e72dee5892e91cefa0f6364890
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\gaiam\\OneDrive\\Desktop\\PROGRAMMAZIONE_AD_OGGETTI\\D-n-A\\Csharp\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
       "projectName": "OOP22-D-n-A-csharp",
       "projectPath": "C:\\Users\\gaiam\\OneDrive\\Desktop\\PROGRAMMAZIONE_AD_OGGETTI\\D-n-A\\Csharp\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
@@ -271,6 +276,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gaiam\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+      "projectUniqueName": "C:\\Users\\emili\\OneDrive\\Desktop\\uni\\oop\\progetto\\c#\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
+      "projectName": "OOP22-D-n-A-csharp",
+      "projectPath": "C:\\Users\\emili\\OneDrive\\Desktop\\uni\\oop\\progetto\\c#\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
+      "packagesPath": "C:\\Users\\emili\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\emili\\OneDrive\\Desktop\\uni\\oop\\progetto\\c#\\OOP22-D-n-A-csharp\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\emili\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> b5b7651d1c98d8e72dee5892e91cefa0f6364890
       ],
       "originalTargetFrameworks": [
         "net7.0"
