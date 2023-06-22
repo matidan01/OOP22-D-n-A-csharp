@@ -37,11 +37,11 @@ namespace DnA.ObjMain.StillEntity.Impl
                 case EntityType.PURPLE_PUDDLE:
                     return true;
                 case EntityType.BLUE_PUDDLE:
-                    if (character.GetType().Equals(IPlayer.PlayerType.DEVIL))
+                    if (character.GetPlayerType().Equals(IPlayer.PlayerType.DEVIL))
                         return true;
                     break;
                 case EntityType.RED_PUDDLE:
-                    if (character.GetType().Equals(IPlayer.PlayerType.ANGEL))
+                    if (character.GetPlayerType().Equals(IPlayer.PlayerType.ANGEL))
                         return true;
                     break;
                 default:

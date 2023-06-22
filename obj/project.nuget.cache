@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "34bXIq9yRKqCeblKE+GUe1kODxbY7kA5Ien8x4rKixnK98xj8JYamwN4jra/G+vWtXsAuf7yCLlCyzROXEaxhg==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\gaiam\\OneDrive\\Desktop\\PROGRAMMAZIONE_AD_OGGETTI\\D-n-A\\Csharp\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gaiam\\.nuget\\packages\\microsoft.codecoverage\\17.6.2\\microsoft.codecoverage.17.6.2.nupkg.sha512",
+    "C:\\Users\\gaiam\\.nuget\\packages\\microsoft.net.test.sdk\\17.6.2\\microsoft.net.test.sdk.17.6.2.nupkg.sha512",
+    "C:\\Users\\gaiam\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.6.2\\microsoft.testplatform.objectmodel.17.6.2.nupkg.sha512",
+    "C:\\Users\\gaiam\\.nuget\\packages\\microsoft.testplatform.testhost\\17.6.2\\microsoft.testplatform.testhost.17.6.2.nupkg.sha512",
+    "C:\\Users\\gaiam\\.nuget\\packages\\mstest.testadapter\\3.0.4\\mstest.testadapter.3.0.4.nupkg.sha512",
+    "C:\\Users\\gaiam\\.nuget\\packages\\mstest.testframework\\3.0.4\\mstest.testframework.3.0.4.nupkg.sha512",
+    "C:\\Users\\gaiam\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\gaiam\\.nuget\\packages\\nuget.frameworks\\6.5.0\\nuget.frameworks.6.5.0.nupkg.sha512",
+    "C:\\Users\\gaiam\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}
