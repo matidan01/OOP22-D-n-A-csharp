@@ -32,7 +32,7 @@ public class CollisionTest
     public void TestRectCollision()
     {
         //(0,0) angolo in alto a sx
-        NUnit.Framework.Assert.IsTrue(BOX.IsCollidingWith(POS, HEIGHT, WIDTH));
+        Assert.IsTrue(BOX.IsCollidingWith(POS, HEIGHT, WIDTH));
         Assert.IsTrue(BOX.IsCollidingWith(POS, HEIGHT / 2, WIDTH / 2));
         Assert.IsTrue(BOX.IsCollidingWith(new Position2d(X - WIDTH, Y), HEIGHT, WIDTH));
         Assert.IsTrue(BOX.IsCollidingWith(new Position2d(X, Y - HEIGHT), HEIGHT, WIDTH));
