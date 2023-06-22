@@ -34,7 +34,7 @@ namespace DnA.ObjMain.Entity.Impl
                 EntityType.PLATFORM => new Platform(position[0], IEntityFactory.DEF_HEIGHT, IEntityFactory.PLATFORM_WIDTH),
                 EntityType.MOVABLEPLATFORM => new MovablePlatform(position[0], defaultVector, IEntityFactory.DEF_HEIGHT, IEntityFactory.PLATFORM_WIDTH, EntityType.MOVABLEPLATFORM, position[1]),
                 EntityType.DIAMOND => new Main.Extra.Diamond(IEntityFactory.DIAMOND_HEIGHT, IEntityFactory.DIAMOND_WIDTH, DIAMOND_VALUE, position[0]),
-                _ => throw new ArgumentException()
+                _ => throw new ArgumentException("Not an acceptable argument")
             };
         }
     }

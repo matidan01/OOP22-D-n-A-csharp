@@ -8,30 +8,30 @@ namespace DNA.GGame
 {
     public class GameEngine : IGameEngine
     {
-        private Display ? display;
-        private IGameState ? game;
+        private Display? display;
+        private IGameState? game;
         private readonly Level levelConstruct;
         private bool running;
         private static readonly double RATEUPDATE = 1.0d / 60.0d;
-        private static GameThread ? gameThread;
-        private static IMenuFactory ? menuFactory;
+        private static GameThread? gameThread;
+        private static IMenuFactory? menuFactory;
         private readonly IInputControl angelInputControl = new InputControl();
         private readonly IInputControl devilInputControl = new InputControl();
-        private readonly int lvl;
+        private readonly int level;
 
         public GameEngine(int lvl)
         {
-            this.levelConstruct = new Level(lvl);
-            this.levelConstruct.EntitiesList();
-            this.lvl = lvl;
-            this.running = false;
+            levelConstruct = new Level(lvl);
+            levelConstruct.EntitiesList();
+            level = lvl;
+            running = false;
 
         }
 
         public static void SetGameThread(GameThread gameT)
         {
             gameThread = gameT;
-            menuFactory = new MenuFactoryImpl(gameThread);
+            menuFactory = new MenuFactory();
         }
 
         public static GameThread GetGameThread()
@@ -39,22 +39,19 @@ namespace DNA.GGame
             return gameThread;
         }
 
-        public double GetScore()
-        {
-            return this.game.GetScore();
-        }
+        public double GetScore() => game.GetScore();
 
         public int GetLevel()
         {
-            return this.lvl;
+            return level;
         }
 
         public void Run()
         {
-            this.display = new Display(levelConstruct.GetCharacters(), menuFactory, angelInputControl, devilInputControl);
-            this.game = new GameState(display.GetScreenDimension(), display.GetScreenDimension(),
-                this.levelConstruct.GetEntities(), this.levelConstruct.GetCharacters());
-            this.running = true;
+            display = new Display(levelConstruct.GetCharacters(), menuFactory, angelInputControl, devilInputControl);
+            game = new GameState(Display.GetScreenDimension(), Display.GetScreenDimension(),
+                levelConstruct.GetEntities(), levelConstruct.GetCharacters());
+            running = true;
             double accumulator = 0;
             long currentTime, lastUpdate = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
 
@@ -69,35 +66,30 @@ namespace DNA.GGame
                 {
                     if (running)
                     {
-                        this.angelInputControl.ComputeAll();
-                        this.devilInputControl.ComputeAll();
-                        this.Update();
+                        angelInputControl.ComputeAll();
+                        devilInputControl.ComputeAll();
+                        Update();
                     }
                     accumulator -= RATEUPDATE;
                 }
-                this.Render();
+                Render();
             }
         }
 
         private void Render()
         {
-            display.Render(this.game.GetEntities(), this.game.GetCharacters());
+            display.Render(game.GetEntities(), game.GetCharacters());
         }
 
         private void Update()
         {
-            this.game.Update();
+            game.Update();
         }
 
         public void Stop()
         {
-            this.running = false;
-            this.display.Dispose();
-        }
-
-        public static void PlaySound(string audioFileName)
-        {
-            new SoundManager().GetClip(audioFileName).Start();
+            running = false;
+            display.Dispose();
         }
 
         public IMenuFactory GetMenuFactory()

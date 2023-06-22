@@ -242,7 +242,7 @@ namespace DnA.Main.Game.Impl
                             }
                             break;
                         default:
-                            throw new ArgumentException();
+                            throw new ArgumentException("Not an acceptable argument");
                     }
                 });
 
