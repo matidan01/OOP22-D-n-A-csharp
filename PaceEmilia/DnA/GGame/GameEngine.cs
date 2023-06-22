@@ -31,7 +31,7 @@ namespace DNA.GGame
         public static void SetGameThread(GameThread gameT)
         {
             gameThread = gameT;
-            menuFactory = new MenuFactory(gameThread);
+            menuFactory = new MenuFactory();
         }
 
         public static GameThread GetGameThread()

@@ -1,15 +1,8 @@
-using DNA.GGame;
-
 namespace DnA.GGame
 {
     public class MenuFactory : IMenuFactory
     {
-        private readonly GameThread gameThread;
 
-        public MenuFactory(GameThread gameThread)
-        {
-            this.gameThread = gameThread;
-        }
 
         public IGameMenu GameOverMenu(int levelNumber)
         {

@@ -59,12 +59,12 @@ namespace DNA.GGame
             lvl = gameEngine.GetLevel();
             if (lvl == 3)
             {
-                this.gameEngine.GetMenuFactory().LastVictoryMenu().CreateMenuForm();
+                this.gameEngine.GetMenuFactory().LastVictoryMenu();
             }
             else
             {
                 lvl++;
-                this.gameEngine.GetMenuFactory().VictoryMenu(lvl).CreateMenuForm();
+                this.gameEngine.GetMenuFactory().VictoryMenu(lvl);
             }
 
             thread.Interrupt();
@@ -79,7 +79,7 @@ namespace DNA.GGame
         public void LoosingGame()
         {
             lvl = gameEngine.GetLevel();
-            gameEngine.GetMenuFactory().GameOverMenu(lvl).CreateMenuForm();
+            gameEngine.GetMenuFactory().GameOverMenu(lvl);
             thread.Interrupt();
             gameEngine.Stop();
         }
