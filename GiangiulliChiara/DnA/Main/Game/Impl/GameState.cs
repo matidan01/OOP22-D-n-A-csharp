@@ -10,6 +10,8 @@ using DnA.GMain.ObjMain.Entity.Api;
 using DnA.Game.Player.api;
 using DnA.ObjMain.StillEntity.Impl;
 using DnA.GMain.ObjMain.MovableEntity.Impl;
+using static DnA.GMain.ObjMain.Entity.Api.IEntity;
+using DnA.GMain.ObjMain.StillEntity.Impl;
 
 namespace DnA.Main.Game.Impl
 {
@@ -145,15 +147,15 @@ namespace DnA.Main.Game.Impl
                 .ToList()
                 .ForEach(e =>
                 {
-                    Player? objPlayer;
-                    switch (e.Type())
+                    IPlayer? objPlayer;
+                    switch (e.GetType())
                     {
                         case EntityType.BUTTON:
                         case EntityType.LEVER:
                             objPlayer = ((ActivableObjectImpl)e).GetPlayer();
                             if (objPlayer != null && objPlayer.Equals(character))
                             {
-                                if (e.Type() == EntityType.BUTTON)
+                                if (e.GetType() == EntityType.BUTTON)
                                 {
                                     ((ActivableObjectImpl)e).Deactivate();
                                 }
@@ -202,7 +204,7 @@ namespace DnA.Main.Game.Impl
                 .ToList()
                 .ForEach(e =>
                 {
-                    switch (e.Type())
+                    switch (e.GetType())
                     {
                         case EntityType.PLATFORM:
                             _eventQueue.AddEvent(_eventFactory.HitPlatformEvent(e, character));
