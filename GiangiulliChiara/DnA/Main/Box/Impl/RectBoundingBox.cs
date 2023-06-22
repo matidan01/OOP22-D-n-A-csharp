@@ -8,7 +8,7 @@ namespace DnA.Main.Box.Impl
     /// </summary>
     public class RectBoundingBox : IBoundingBox
     {
-        private readonly Position2d _position;
+        private Position2d _position;
         private readonly double _height;
         private readonly double _width;
 
@@ -42,7 +42,7 @@ namespace DnA.Main.Box.Impl
         /// <returns><inheritdoc/></returns>
         public void SetPosition(Position2d pos)
         {
-            throw new System.NotImplementedException();
+            _position = pos;
         }
 
         /// <summary>

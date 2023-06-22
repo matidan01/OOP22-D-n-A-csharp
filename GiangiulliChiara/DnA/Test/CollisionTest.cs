@@ -1,4 +1,4 @@
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DnA.Main.Box.Api;
 using DnA.Main.Box.Impl;
 using DnA.Main.Common;
@@ -11,7 +11,7 @@ using DnA.Game.Player.impl;
 namespace DnA.Test
 {
 
-[TestFixture]
+[TestClass]
 public class CollisionTest
 {
     private const double X = 10;
@@ -28,7 +28,7 @@ public class CollisionTest
     /// <summary>
     /// Test the collision between rectangular boxes.
     /// </summary>
-    [Test]
+    [TestMethod]
     public void TestRectCollision()
     {
         //(0,0) angolo in alto a sx
@@ -50,7 +50,7 @@ public class CollisionTest
     /// <summary>
     /// Test if the collision is on the left or the right side.
     /// </summary>
-    [Test]
+    [TestMethod]
     public void TestSideCollision()
     {
         //(0,0) angolo in alto a sx
@@ -70,7 +70,7 @@ public class CollisionTest
     /// <summary>
     /// Test the collision between the character and the borders.
     /// </summary>
-    [Test]
+    [TestMethod]
     public void TestBordersCollision()
     {
         //(0,0) angolo in alto a sx
