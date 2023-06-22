@@ -16,5 +16,8 @@
     <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
   </ItemGroup>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9442207d17af19b8b1d1199aeadd7f6f5bd35fa3
 </Project>
