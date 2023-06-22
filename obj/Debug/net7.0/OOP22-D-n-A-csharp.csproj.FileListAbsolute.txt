@@ -1,0 +1,5 @@
+C:\Users\gaiam\OneDrive\Desktop\PROGRAMMAZIONE_AD_OGGETTI\D-n-A\Csharp\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.csproj.AssemblyReference.cache
+C:\Users\gaiam\OneDrive\Desktop\PROGRAMMAZIONE_AD_OGGETTI\D-n-A\Csharp\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gaiam\OneDrive\Desktop\PROGRAMMAZIONE_AD_OGGETTI\D-n-A\Csharp\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.AssemblyInfoInputs.cache
+C:\Users\gaiam\OneDrive\Desktop\PROGRAMMAZIONE_AD_OGGETTI\D-n-A\Csharp\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.AssemblyInfo.cs
+C:\Users\gaiam\OneDrive\Desktop\PROGRAMMAZIONE_AD_OGGETTI\D-n-A\Csharp\OOP22-D-n-A-csharp\obj\Debug\net7.0\OOP22-D-n-A-csharp.csproj.CoreCompileInputs.cache
