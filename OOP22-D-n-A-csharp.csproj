@@ -10,10 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="nunit" Version="3.13.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="OOP22-D-n-A-csharp.csproj" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
   </ItemGroup>
 
 </Project>

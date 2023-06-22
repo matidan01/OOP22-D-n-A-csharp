@@ -13,7 +13,7 @@ namespace it.unibo.dna
     [TestFixture]
     public class ObjectsTest
     {
-        private static readonly EntityFactoryImpl ENTITYFACTORY = new EntityFactoryImpl();
+        private static readonly EntityFactoryImpl ENTITYFACTORY = new ();
         private const double X = 10;
         private const double Y = 20;
         private static readonly Position2d POS = new (X, Y);
@@ -75,10 +75,10 @@ namespace it.unibo.dna
         {
             ((ActivableObjectImpl)BUTTON).Activate();
             Assert.IsTrue(((ActivableObjectImpl)BUTTON).IsActivated());
-            Assert.AreEqual(((ActivableObjectImpl)BUTTON).GetMovablePlatform().GetPosition(), PLATFORM.GetFinalPosition());
+            Assert.AreEqual(((ActivableObjectImpl)BUTTON).GetMovablePlatform()?.GetPosition(), PLATFORM.GetFinalPosition());
             ((ActivableObjectImpl)LEVER).Deactivate();
             Assert.IsFalse(((ActivableObjectImpl)LEVER).IsActivated());
-            Assert.AreEqual(((ActivableObjectImpl)LEVER).GetMovablePlatform().GetPosition(), PLATFORM.GetOriginalPosition());
+            Assert.AreEqual(((ActivableObjectImpl)LEVER).GetMovablePlatform()?.GetPosition(), PLATFORM.GetOriginalPosition());
         }
 
         [Test]
