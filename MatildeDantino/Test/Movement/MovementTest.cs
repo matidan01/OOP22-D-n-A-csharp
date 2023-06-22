@@ -3,11 +3,11 @@ using DnA.Game.Player.api;
 using DnA.Game.Player.impl;
 using DnA.Game.Command.api;
 using DnA.Game.Command.impl;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DnATest;
+namespace DnATest{
 
-[TestFixture]
+[TestClass]
 public class MovementTest
 {
     private static readonly Position2d START_POSITION = new(0, 0);
@@ -17,7 +17,7 @@ public class MovementTest
     private const IPlayer.PlayerType TYPE = IPlayer.PlayerType.ANGEL;
     private readonly Player _player = new(START_POSITION, START_VECTOR, HEIGHT, WIDTH, TYPE);
 
-    [Test]
+    [TestMethod]
     public void TestPlayerUpdate()
     {   
         Position2d expectedPosition = new Position2d(0, 0).Sum(START_VECTOR);
@@ -25,30 +25,31 @@ public class MovementTest
         Assert.AreEqual(expectedPosition, _player.GetPosition());
     }
 
-    [Test]
+    [TestMethod]
     public void TestCommand()
     {
         // Test the "right" command
         ICommandFactory _command = new CommandFactory(_player);
         Vector2d expectedVectorRight = new (IPlayer.STANDARDVELOCITY, 0);
-        (State.StateEnum, State.StateEnum) expectedStateRight = (State.StateEnum.STATE_STANDING, State.StateEnum.STATE_RIGHT);
+        Tuple<State.StateEnum, State.StateEnum> expectedStateRight = Tuple.Create(State.StateEnum.STATE_STANDING, State.StateEnum.STATE_RIGHT);
         _command.Right().Execute();
         Assert.AreEqual(expectedVectorRight, _player.GetVector());
         Assert.AreEqual(expectedStateRight, _player.GetStateCopy().GetPairState());
 
         // Test the "left" command
         Vector2d expectedVectorLeft = new (-IPlayer.STANDARDVELOCITY, 0);
-        (State.StateEnum, State.StateEnum) expectedStateLeft = (State.StateEnum.STATE_STANDING, State.StateEnum.STATE_RIGHT);
+        Tuple<State.StateEnum, State.StateEnum> expectedStateLeft = Tuple.Create(State.StateEnum.STATE_STANDING, State.StateEnum.STATE_LEFT);
         _command.Left().Execute();
         Assert.AreEqual(expectedVectorLeft, _player.GetVector());
         Assert.AreEqual(expectedStateLeft, _player.GetStateCopy().GetPairState());
 
         // Test the "jump" command
         Vector2d expectedVectorJump = new (0, -IPlayer.JUMPVELOCITY);
-        (State.StateEnum, State.StateEnum) expectedStateJump = (State.StateEnum.STATE_STANDING, State.StateEnum.STATE_RIGHT);
+        Tuple<State.StateEnum, State.StateEnum> expectedStateJump = Tuple.Create(State.StateEnum.STATE_JUMPING, State.StateEnum.STATE_STILL);
         _command.Stop().Execute();
         _command.Jump().Execute();
         Assert.AreEqual(expectedVectorJump, _player.GetVector());
         Assert.AreEqual(expectedStateJump, _player.GetStateCopy().GetPairState());
     }
+}
 }
