@@ -16,7 +16,7 @@ namespace DnA.ObjMain.Entity.Impl
         /// <summary>
         /// A constant for the value of the diamond.
         /// </summary>
-        //private const double DIAMOND_VALUE = 1;
+        private const double DIAMOND_VALUE = 1;
         private readonly Vector2d defaultVector = new (0, 0);
 
         /// <inheritdoc/>
@@ -33,7 +33,7 @@ namespace DnA.ObjMain.Entity.Impl
                 EntityType.DEVIL_DOOR => new Door(position[0], IEntityFactory.DOOR_HEIGHT, IEntityFactory.DOOR_WIDTH, EntityType.DEVIL_DOOR),
                 EntityType.PLATFORM => new Platform(position[0], IEntityFactory.DEF_HEIGHT, IEntityFactory.PLATFORM_WIDTH),
                 EntityType.MOVABLEPLATFORM => new MovablePlatform(position[0], defaultVector, IEntityFactory.DEF_HEIGHT, IEntityFactory.PLATFORM_WIDTH, EntityType.MOVABLEPLATFORM, position[1]),
-                //EntityType.DIAMOND => new Main.Extra.Diamond((double) IEntityFactory.DIAMOND_HEIGHT, (double) IEntityFactory.DIAMOND_WIDTH, DIAMOND_VALUE, position[0]),
+                EntityType.DIAMOND => new Main.Extra.Diamond(IEntityFactory.DIAMOND_HEIGHT, IEntityFactory.DIAMOND_WIDTH, DIAMOND_VALUE, position[0]),
                 _ => throw new ArgumentException()
             };
         }
