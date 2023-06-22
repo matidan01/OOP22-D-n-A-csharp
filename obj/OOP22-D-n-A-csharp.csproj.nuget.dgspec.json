@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Utente\\Desktop\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj": {}
+    "C:\\Users\\gaiam\\OneDrive\\Desktop\\PROGRAMMAZIONE_AD_OGGETTI\\D-n-A\\Csharp\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Utente\\Desktop\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj": {
+    "C:\\Users\\gaiam\\OneDrive\\Desktop\\PROGRAMMAZIONE_AD_OGGETTI\\D-n-A\\Csharp\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Utente\\Desktop\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
+        "projectUniqueName": "C:\\Users\\gaiam\\OneDrive\\Desktop\\PROGRAMMAZIONE_AD_OGGETTI\\D-n-A\\Csharp\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
         "projectName": "OOP22-D-n-A-csharp",
-        "projectPath": "C:\\Users\\Utente\\Desktop\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
-        "packagesPath": "C:\\Users\\Utente\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Utente\\Desktop\\OOP22-D-n-A-csharp\\obj\\",
+        "projectPath": "C:\\Users\\gaiam\\OneDrive\\Desktop\\PROGRAMMAZIONE_AD_OGGETTI\\D-n-A\\Csharp\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
+        "packagesPath": "C:\\Users\\gaiam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gaiam\\OneDrive\\Desktop\\PROGRAMMAZIONE_AD_OGGETTI\\D-n-A\\Csharp\\OOP22-D-n-A-csharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Utente\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\gaiam\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -38,6 +38,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
             "nunit": {
               "target": "Package",
               "version": "[3.13.3, )"

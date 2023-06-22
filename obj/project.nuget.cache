@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "O+nkEaaNOqPwQdT9DmxnoW95WxlEoXjUdVGhcCma056x+F66zXiOE8eHeH45b9Hbir7rraW9TgOzoNBBuEiBbg==",
+  "dgSpecHash": "+fr8r7i6vkmbYbd3ZPUYj/Ccqe3KNCWg/V8N+jykhybLSJaE+bbTRhyPMQa2AEHRNlBgbObazpwY7xztcyW/8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Utente\\Desktop\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
+  "projectFilePath": "C:\\Users\\gaiam\\OneDrive\\Desktop\\PROGRAMMAZIONE_AD_OGGETTI\\D-n-A\\Csharp\\OOP22-D-n-A-csharp\\OOP22-D-n-A-csharp.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Utente\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Utente\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
-    "C:\\Users\\Utente\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512"
+    "C:\\Users\\gaiam\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\gaiam\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\gaiam\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
+    "C:\\Users\\gaiam\\.nuget\\packages\\nunit3testadapter\\4.5.0\\nunit3testadapter.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
