@@ -63,7 +63,7 @@ namespace DnA.Game.Player.impl
             /// <inheritdoc/>
             public void Update() => this.SetPosition(this.GetPosition().Sum(_vector));
                 
-
+            /// <inheritdoc/>
             public Vector2d GetVector() => _vector;
 
         }
