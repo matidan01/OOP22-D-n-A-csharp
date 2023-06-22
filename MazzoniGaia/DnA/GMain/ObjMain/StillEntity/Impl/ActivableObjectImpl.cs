@@ -21,9 +21,9 @@ namespace DnA.GMain.ObjMain.StillEntity.Impl
     {
         private bool _isActive;
         private IPlayer? _player;
-        private readonly MovablePlatform _movablePlatform;
+        private readonly MovablePlatform? _movablePlatform;
 
-        public ActivableObjectImpl(Position2d pos, double height, double width, MovablePlatform movablePlatform, EntityType type)
+        public ActivableObjectImpl(Position2d pos, double height, double width, MovablePlatform? movablePlatform, EntityType type)
         : base(pos, height, width, type)
         {
             _movablePlatform = movablePlatform;
@@ -56,7 +56,7 @@ namespace DnA.GMain.ObjMain.StillEntity.Impl
         /// Resets the player.
         /// </summary>
         /// <returns></returns>
-        public MovablePlatform GetMovablePlatform()
+        public MovablePlatform? GetMovablePlatform()
         {
             return _movablePlatform;
         }
@@ -67,7 +67,7 @@ namespace DnA.GMain.ObjMain.StillEntity.Impl
         public void Activate()
         {
             _isActive = true;
-            _movablePlatform.Move(_movablePlatform.GetOriginalPosition(), _movablePlatform.GetFinalPosition());
+            _movablePlatform?.Move(_movablePlatform.GetOriginalPosition(), _movablePlatform.GetFinalPosition());
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace DnA.GMain.ObjMain.StillEntity.Impl
         public void Deactivate()
         {
             _isActive = false;
-            _movablePlatform.Move(_movablePlatform.GetFinalPosition(), _movablePlatform.GetOriginalPosition());
+            _movablePlatform?.Move(_movablePlatform.GetFinalPosition(), _movablePlatform.GetOriginalPosition());
         }
 
         /// <summary>
