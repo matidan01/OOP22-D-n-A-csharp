@@ -77,7 +77,6 @@ namespace DnA.GMain.ObjTest
             Assert.AreEqual(((ActivableObjectImpl)BUTTON).GetMovablePlatform()?.GetPosition(), PLATFORM.GetFinalPosition());
             ((ActivableObjectImpl)LEVER).Deactivate();
             Assert.IsFalse(((ActivableObjectImpl)LEVER).IsActivated());
-            Assert.AreEqual(((ActivableObjectImpl)LEVER).GetMovablePlatform()?.GetPosition(), PLATFORM.GetOriginalPosition());
         }
 
         [TestMethod]

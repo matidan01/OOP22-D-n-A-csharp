@@ -8,10 +8,9 @@ using DnA.Main.Common;
 using DnA.Game.Player.impl;
 using DnA.GMain.ObjMain.Entity.Api;
 using DnA.Game.Player.api;
-using DnA.ObjMain.StillEntity.Impl;
+using DnA.GMain.ObjMain.StillEntity.Impl;
 using DnA.GMain.ObjMain.MovableEntity.Impl;
 using static DnA.GMain.ObjMain.Entity.Api.IEntity;
-using DnA.GMain.ObjMain.StillEntity.Impl;
 
 namespace DnA.Main.Game.Impl
 {

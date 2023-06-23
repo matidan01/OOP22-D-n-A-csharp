@@ -64,8 +64,8 @@ namespace DnA.GMain.ObjMain.MovableEntity.Impl
         /// <summary>
         /// A method that allows the platform to move from a starting point to a final point.
         /// </summary>
-        /// <param name="Position2d"> the starting position of the platform </param>
-        /// <param name="Position2d"> the final position that the platform wants to reach </param>
+        /// <param name="position1"> the starting position of the platform </param>
+        /// <param name="position2"> the final position that the platform wants to reach </param>
         public void Move(Position2d position1, Position2d position2)
         {
             _previousVector = GetVector();
@@ -73,7 +73,7 @@ namespace DnA.GMain.ObjMain.MovableEntity.Impl
         }
 
         /// <summary>
-        /// Checks wheter the platform position is between itrs original position and its final position.
+        /// Checks wheter the platform position is between its original position and its final position.
         /// </summary>
         /// <returns> false if the platform has gone out of range. </returns>
         public bool IsBetweenRange()

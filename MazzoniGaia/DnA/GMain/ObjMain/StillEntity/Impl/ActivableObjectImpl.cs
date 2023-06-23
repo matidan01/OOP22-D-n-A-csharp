@@ -11,8 +11,8 @@ namespace DnA.GMain.ObjMain.StillEntity.Impl
     /// <summary>
     /// An ActivableObject that moves its platform when activated by the player.
     /// It can be either a Lever or a Button.
-    /// The Lever moves the {@link MovablePlatform} when it is touched by the player.
-    /// The Button moves the {@link MovablePlatform} while it is being touched by the player.
+    /// The Lever moves the movableplatform when it is touched by the player.
+    /// The Button moves the movableplatform while it is being touched by the player.
     /// </summary>
 
 
@@ -40,28 +40,30 @@ namespace DnA.GMain.ObjMain.StillEntity.Impl
         /// <summary>
         /// Gets the Player that has touched the button.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> the player</returns>
         public IPlayer? GetPlayer()
         {
             return _player;
         }
 
+        /// <summary>
+        /// Resets the player.
+        /// </summary>
         public void ResetPlayer()
         {
             _player = null;
         }
 
         /// <summary>
-        /// Resets the player.
+        /// Gets the MovablePlatform controlled by the ActivableObject.
         /// </summary>
-        /// <returns></returns>
         public MovablePlatform? GetMovablePlatform()
         {
             return _movablePlatform;
         }
 
         /// <summary>
-        /// Gets the MovablePlatform controlled by the ActivableObject.
+        /// A method that moves the MovablePlatform from its starting position towards its final position.
         /// </summary>
         public void Activate()
         {
@@ -70,7 +72,7 @@ namespace DnA.GMain.ObjMain.StillEntity.Impl
         }
 
         /// <summary>
-        /// A method that moves the MovablePlatform from its starting position towards its final position.
+        /// A method that moves the MovablePlatform from its final position towards its starting position.
         /// </summary>
         public void Deactivate()
         {
@@ -79,9 +81,9 @@ namespace DnA.GMain.ObjMain.StillEntity.Impl
         }
 
         /// <summary>
-        /// A method that moves the MovablePlatform from its final position towards its starting position.
+        /// A method that tells whether the ActivableObject is activated.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> whether the ActivableObject is activated. </returns>
         public bool IsActivated()
         {
             return _isActive;

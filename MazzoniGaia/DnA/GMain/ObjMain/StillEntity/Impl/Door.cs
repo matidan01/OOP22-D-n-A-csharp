@@ -53,7 +53,6 @@ namespace DnA.GMain.ObjMain.StillEntity.Impl
 
         /// <summary>
         /// A method that opens the door if the correct player is standing in front of it.
-        /// The door can't be closed after it has been opened.
         /// </summary>
         /// <param name="player">The player standing in front of the door.</param>
         public void OpenDoor(IPlayer player)

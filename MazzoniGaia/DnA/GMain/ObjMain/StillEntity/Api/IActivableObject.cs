@@ -10,14 +10,14 @@ namespace DnA.GMain.ObjMain.StillEntity.Api
     public interface IActivableObject : IEntity
     {
         /// <summary>
-        /// Activates the GameObject.
+        /// Activates the entity.
         /// </summary>
         void Activate();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <returns> True if the GameObject is activated </returns>
+        /// <returns> True if the entity is activated </returns>
         bool IsActivated();
     }
 }

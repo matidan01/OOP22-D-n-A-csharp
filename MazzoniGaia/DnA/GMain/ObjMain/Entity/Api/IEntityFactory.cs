@@ -68,7 +68,7 @@ namespace DnA.GMain.ObjMain.Entity.Api
         /// <param name="movablePlatform"> the optional MovablePlatform that the Entity can control. 
         /// It shoudl be present if a BUTTON or a LEVER is being created</param>
         /// <param name="type"> the type of the Entity</param>
-        /// <param name="position"> the type </param>
+        /// <param name="position"> the position </param>
         /// If two positions are passed as parameters, the first is the originalPosition, and the second is the FinalPosition.
         /// Two positions should be passed if the Entity being created is of the type MOVABLEPLATFORM
         /// <returns> the Entity created </returns>
