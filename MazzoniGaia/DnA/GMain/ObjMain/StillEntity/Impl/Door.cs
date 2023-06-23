@@ -1,11 +1,9 @@
-
-
 using DnA.Main.Common;
 using DnA.GMain.ObjMain.Entity.Api;
 using DnA.Game.Player.impl;
 using DnA.Game.Player.api;
 
-namespace DnA.ObjMain.StillEntity.Impl
+namespace DnA.GMain.ObjMain.StillEntity.Impl
 {
     /// <summary>
     /// A door that can be opened only by the corresponding player.

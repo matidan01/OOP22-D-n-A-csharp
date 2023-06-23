@@ -1,4 +1,3 @@
-
 using DnA.Main.Common;
 using DnA.GMain.ObjMain.MovableEntity.Impl;
 

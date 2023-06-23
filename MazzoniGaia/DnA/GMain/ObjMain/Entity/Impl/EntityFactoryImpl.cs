@@ -3,10 +3,9 @@ using DnA.Main.Common;
 using DnA.GMain.ObjMain.Entity.Api;
 using DnA.GMain.ObjMain.MovableEntity.Impl;
 using DnA.GMain.ObjMain.StillEntity.Impl;
-using DnA.ObjMain.StillEntity.Impl;
 using static DnA.GMain.ObjMain.Entity.Api.IEntity;
 
-namespace DnA.ObjMain.Entity.Impl
+namespace DnA.GMain.ObjMain.Entity.Impl
 {
     /// <summary>
     /// A class that implements the <see cref="IEntityFactory"/> interface's createEntity method.

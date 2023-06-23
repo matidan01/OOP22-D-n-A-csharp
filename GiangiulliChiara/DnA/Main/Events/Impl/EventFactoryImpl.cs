@@ -5,7 +5,6 @@ using DnA.GMain.ObjMain.MovableEntity.Impl;
 using DnA.GMain.ObjMain.StillEntity.Impl;
 using DnA.Main.Events.Api;
 using DnA.Main.Extra;
-using DnA.ObjMain.StillEntity.Impl;
 using static DnA.Game.Player.impl.State;
 namespace DnA.Main.Events.Impl
 {

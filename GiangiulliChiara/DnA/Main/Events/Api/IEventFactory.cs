@@ -3,7 +3,6 @@ using DnA.GMain.ObjMain.Entity.Api;
 using DnA.GMain.ObjMain.MovableEntity.Impl;
 using DnA.GMain.ObjMain.StillEntity.Impl;
 using DnA.Main.Extra;
-using DnA.ObjMain.StillEntity.Impl;
 
 namespace DnA.Main.Events.Api
 {

@@ -1,14 +1,13 @@
 using DnA.Game.Player.api;
 using DnA.Game.Player.impl;
 using DnA.GMain.ObjMain.Entity.Api;
+using DnA.GMain.ObjMain.Entity.Impl;
 using DnA.GMain.ObjMain.MovableEntity.Impl;
 using DnA.GMain.ObjMain.StillEntity.Impl;
 using DnA.Main.Common;
-using DnA.ObjMain.Entity.Impl;
-using DnA.ObjMain.StillEntity.Impl;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace it.unibo.dna
+namespace DnA.GMain.ObjTest
 {
     [TestClass]
     public class ObjectsTest
