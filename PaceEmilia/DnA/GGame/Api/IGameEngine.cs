@@ -4,7 +4,7 @@ namespace DNA.GGame
 {
     public interface IGameEngine
     {
-        double GetScore();
+        double? GetScore();
 
         int GetLevel();
 
@@ -12,7 +12,7 @@ namespace DNA.GGame
 
         void Stop();
 
-        IMenuFactory GetMenuFactory();
+        IMenuFactory? GetMenuFactory();
 
         bool IsRunning();
     }

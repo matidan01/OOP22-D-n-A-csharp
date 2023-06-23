@@ -1,29 +1,28 @@
 using DnA.Game.Player.api;
-using DnA.Game.Player.impl;
 using DnA.GMain.ObjMain.Entity.Api;
 
 namespace DnA.GGame
 {
     public class Display
     {
-        private List<Player> ? players;
-        private IMenuFactory ? menuFactory;
-        private IInputControl angelInputControl;
-        private IInputControl devilInputControl;
-        private List<IPlayer> players1;
 
-        public Display(List<IPlayer> players1, IMenuFactory? menuFactory, IInputControl angelInputControl, IInputControl devilInputControl)
+
+        public Display(List<IPlayer> players1, IMenuFactory? menuFactory1, IInputControl angelInputControl1, IInputControl devilInputControl)
         {
-            this.players1 = players1;
-            this.menuFactory = menuFactory;
-            this.angelInputControl = angelInputControl;
-            this.devilInputControl = devilInputControl;
+            Players = players1;
+            MenusFactory = menuFactory1;
+            AngelInputControl = angelInputControl1;
+            DevilInputControl = devilInputControl;
         }
 
+        public List<IPlayer> Players { get; }
+        public IMenuFactory? MenusFactory { get; }
+        public IInputControl AngelInputControl { get; }
+        public IInputControl DevilInputControl { get; }
 
         internal static int GetScreenDimension()
         {
-            return 1;
+            throw new NotImplementedException();
         }
 
         internal void Dispose()
@@ -31,7 +30,7 @@ namespace DnA.GGame
             throw new NotImplementedException();
         }
 
-        internal void Render(List<IEntity> entities, List<IPlayer> players)
+        internal void Render(List<IEntity>? entities, List<IPlayer>? players)
         {
             throw new NotImplementedException();
         }

@@ -2,7 +2,7 @@
 using DnA.GGame;
 using DnA.Main.Game.Api;
 using DnA.Main.Game.Impl;
-using DNA.Model.Game.Level;
+
 
 namespace DNA.GGame
 {
@@ -21,7 +21,7 @@ namespace DNA.GGame
 
         public GameEngine(int lvl)
         {
-            levelConstruct = new Level(lvl);
+            levelConstruct = new Level();
             levelConstruct.EntitiesList();
             level = lvl;
             running = false;
@@ -34,12 +34,12 @@ namespace DNA.GGame
             menuFactory = new MenuFactory();
         }
 
-        public static GameThread GetGameThread()
+        public static GameThread? GetGameThread()
         {
             return gameThread;
         }
 
-        public double GetScore() => game.GetScore();
+        public double? GetScore() => game?.GetScore();
 
         public int GetLevel()
         {
@@ -78,21 +78,21 @@ namespace DNA.GGame
 
         private void Render()
         {
-            display.Render(game.GetEntities(), game.GetCharacters());
+            display?.Render(game?.GetEntities(), game?.GetCharacters());
         }
 
         private void Update()
         {
-            game.Update();
+            game?.Update();
         }
 
         public void Stop()
         {
             running = false;
-            display.Dispose();
+            display?.Dispose();
         }
 
-        public IMenuFactory GetMenuFactory()
+        public IMenuFactory? GetMenuFactory()
         {
             return menuFactory;
         }
