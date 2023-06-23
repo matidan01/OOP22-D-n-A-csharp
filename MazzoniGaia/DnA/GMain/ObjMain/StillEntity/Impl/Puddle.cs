@@ -1,10 +1,9 @@
 using DnA.Game.Player.api;
 using DnA.Game.Player.impl;
-using DnA.GMain.ObjMain.Entity.Api;
 using DnA.Main.Common;
 using static DnA.GMain.ObjMain.Entity.Api.IEntity;
 
-namespace DnA.ObjMain.StillEntity.Impl
+namespace DnA.GMain.ObjMain.StillEntity.Impl
 {
     /// <summary>
     /// A puddle with the following characteristics:

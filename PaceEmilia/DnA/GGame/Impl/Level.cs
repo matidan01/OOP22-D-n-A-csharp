@@ -3,7 +3,7 @@ using DnA.Game.Player.impl;
 using DnA.GMain.ObjMain.Entity.Api;
 using DnA.GMain.ObjMain.MovableEntity.Impl;
 using DnA.Main.Common;
-using DnA.ObjMain.Entity.Impl;
+using DnA.GMain.ObjMain.Entity.Impl;
 using static DnA.GMain.ObjMain.Entity.Api.IEntity;
 
 namespace DnA.GGame

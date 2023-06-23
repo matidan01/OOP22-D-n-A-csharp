@@ -1,11 +1,9 @@
-
-
 using DnA.Main.Common;
 using DnA.GMain.ObjMain.Entity.Api;
 using DnA.Game.Player.impl;
 using DnA.Game.Player.api;
 
-namespace DnA.ObjMain.StillEntity.Impl
+namespace DnA.GMain.ObjMain.StillEntity.Impl
 {
     /// <summary>
     /// A door that can be opened only by the corresponding player.
@@ -55,7 +53,6 @@ namespace DnA.ObjMain.StillEntity.Impl
 
         /// <summary>
         /// A method that opens the door if the correct player is standing in front of it.
-        /// The door can't be closed after it has been opened.
         /// </summary>
         /// <param name="player">The player standing in front of the door.</param>
         public void OpenDoor(IPlayer player)

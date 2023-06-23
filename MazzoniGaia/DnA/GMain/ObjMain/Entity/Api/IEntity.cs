@@ -1,5 +1,4 @@
 using DnA.Main.Box.Api;
-using DnA.Main.Box.Impl;
 using DnA.Main.Common;
 
 namespace DnA.GMain.ObjMain.Entity.Api
@@ -76,13 +75,13 @@ namespace DnA.GMain.ObjMain.Entity.Api
         void SetPositionX(double x);
 
         /// <summary>
-        /// Sets the x-axis of the position.
+        /// Sets the y-axis of the position.
         /// </summary>
         /// <param name="y">The y-axis value.</param>
         void SetPositionY(double y);
 
         /// <summary>
-        /// Gets the type fp the entity.
+        /// Gets the type of the entity.
         /// </summary>
         /// <returns>The type of the entity. </returns>
         EntityType GetType();

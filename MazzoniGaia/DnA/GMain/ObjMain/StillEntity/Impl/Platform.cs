@@ -2,7 +2,7 @@ using DnA.Game.Player.impl;
 using DnA.Main.Common;
 using DnA.GMain.ObjMain.Entity.Api;
 
-namespace DnA.ObjMain.StillEntity.Impl
+namespace DnA.GMain.ObjMain.StillEntity.Impl
 {
     /// <summary>
     /// A still platform.
